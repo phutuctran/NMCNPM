@@ -1,0 +1,314 @@
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.AssemblyReference.cache
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.frmMain.resources
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.Properties.Resources.resources
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.GenerateResource.cache
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.exe.licenses
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.CoreCompileInputs.cache
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\NMCNPM.exe.config
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\NMCNPM.exe
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\NMCNPM.pdb
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.Licensing.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLoader.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPages.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRating.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.Deprecated.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Data.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Printing.v19.2.Core.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Sparkline.v19.2.Core.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Utils.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraBars.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraEditors.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Pdf.v19.2.Core.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLoader.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPages.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRating.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Data.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Printing.v19.2.Core.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Sparkline.v19.2.Core.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Utils.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraBars.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraEditors.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Data.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Data.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Data.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Data.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Printing.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Printing.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Printing.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Printing.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Utils.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Utils.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Utils.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Utils.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraEditors.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraEditors.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraEditors.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.CopyComplete
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.exe
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.pdb
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraGrid.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraLayout.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraPrinting.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraTreeList.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Office.v19.2.Core.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Images.v19.2.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraGrid.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraLayout.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraPrinting.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.RichEdit.v19.2.Core.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraTreeList.v19.2.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Office.v19.2.Core.xml
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraGrid.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraGrid.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraGrid.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraGrid.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraLayout.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraLayout.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraLayout.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraLayout.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Office.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
+D:\A jerry\Github\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\NMCNPM.exe.config
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\NMCNPM.exe
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\NMCNPM.pdb
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.Licensing.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLoader.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPages.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRating.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.Deprecated.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Data.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Printing.v19.2.Core.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Sparkline.v19.2.Core.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Utils.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraBars.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraEditors.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraGrid.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraLayout.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraPrinting.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Pdf.v19.2.Core.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraTreeList.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Office.v19.2.Core.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Images.v19.2.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuLoader.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPages.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuRating.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Data.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Printing.v19.2.Core.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Sparkline.v19.2.Core.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Utils.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraBars.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraEditors.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraGrid.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraLayout.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraPrinting.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.RichEdit.v19.2.Core.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraTreeList.v19.2.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\DevExpress.Office.v19.2.Core.xml
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Data.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Data.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Data.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Data.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Printing.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Printing.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Printing.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Printing.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Utils.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Utils.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Utils.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Utils.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraEditors.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraEditors.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraEditors.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraGrid.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraGrid.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraGrid.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraGrid.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraLayout.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraLayout.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraLayout.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraLayout.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraPrinting.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.RichEdit.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraTreeList.v19.2.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.Office.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.AssemblyReference.cache
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.frmMain.resources
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.Properties.Resources.resources
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.GenerateResource.cache
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.exe.licenses
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.CoreCompileInputs.cache
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.csproj.CopyComplete
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.exe
+D:\DANMCNPM\StudentManagementSystem\NMCNPM\NMCNPM\obj\Debug\NMCNPM.pdb
