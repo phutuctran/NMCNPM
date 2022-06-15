@@ -38,10 +38,14 @@ namespace StudentManagementSystem
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-      
+            //tabMain.Appearance = TabAppearance.FlatButtons;
+            //tabMain.ItemSize = new Size(0, 1);
+            //tabMain.SizeMode = TabSizeMode.Fixed;
             GetandShowMaNamHoc();
             GetandShowMaNamHocpage2();
             GetandShowMaNamHocpage3();
+            GetandShowMaNamHocpage4();
+            LoadPage5();
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -74,9 +78,29 @@ namespace StudentManagementSystem
             }
         }
 
-        private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
+        private void bunifuTextBox1_TextChanged(object sender, EventArgs e) //search page1
         {
-
+            string text = TB_search_page1.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                for (int i = 0; i < dataGridView_BangDiem.RowCount; i++)
+                {
+                    dataGridView_BangDiem.Rows[i].Visible = true;
+                }
+            }
+            for (int i = 0; i < dataGridView_BangDiem.RowCount; i++)
+            {
+                string mahs = dataGridView_BangDiem.Rows[i].Cells[1].Value.ToString();
+                string tenhs = dataGridView_BangDiem.Rows[i].Cells[2].Value.ToString();
+                if (!mahs.Contains(text) && !tenhs.Contains(text))
+                {
+                    dataGridView_BangDiem.Rows[i].Visible = false;
+                }
+                else
+                {
+                    dataGridView_BangDiem.Rows[i].Visible = true;
+                }
+            }
         }
 
         private void CB_NamHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,9 +221,9 @@ namespace StudentManagementSystem
                 {
                     rdr.Read();
                     string tenLop = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
-                    string siSo = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                    int siSo = rdr.IsDBNull(1) ? 0 : rdr.GetInt32(1);
                     string tenGV = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
-                    lb_SiSo_page1.Text = "Sĩ số: " + siSo;
+                    lb_SiSo_page1.Text = "Sĩ số: " + siSo.ToString();
                     lb_TenLop_page1.Text = "Lớp: " + tenLop;
                     lb_GVCN_page1.Text = "GVCN: " + tenGV;
                 }
@@ -1023,7 +1047,7 @@ namespace StudentManagementSystem
 
         void GetInfoHocSinh(string addtoQuery)
         {
-            string query = "SELECT MAHS, HotenHS, gioitinh, ngaysinh, LOP.TENLOP, noisinh, diachi, sodt, email, Ghichu FROM HOCSINH, LOP WHERE LOP.MALOP = HOCSINH.MALOP" + addtoQuery;
+            string query = "SELECT MAHS, HotenHS, gioitinh, ngaysinh, LOP.TENLOP, noisinh, diachi, sodt, email, Ghichu FROM HOCSINH, LOP WHERE (LOP.MALOP = HOCSINH.MALOP" + addtoQuery + ") OR EXISTS(SELECT* FROM LOPDAHOC WHERE LOPDAHOC.MAHS = HOCSINH.MAHS AND LOPDAHOC.MALOP = LOP.MALOP)";
             SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
             int stt = 0;
             dataGridView_ThongTinHocSinh.Rows.Clear();
@@ -1062,32 +1086,86 @@ namespace StudentManagementSystem
         }
 
         //-----------page3------------
+
+        class Diemtrb
+        {
+            public double diem;
+            public string maDiemMon;
+            public Diemtrb(double _diem, string _maDiemMon)
+            {
+                diem = _diem;
+                maDiemMon = _maDiemMon;
+            }
+        }
+        class DiemtrbHS
+        {
+            public string maHS;
+            public string tenHS;
+            public string hanhKiem1;
+            public string hanhKiem2;
+            public string maHKiem;
+
+            public List<Diemtrb> listdiemTrb = new List<Diemtrb>();
+            public DiemtrbHS(string maHs = "", string tenHs = "")
+            {
+                maHS = maHs;
+                tenHS = tenHs;
+            }
+        }
+        List<DiemtrbHS> listHS_page3 = new List<DiemtrbHS>();
+        int cur_namHoc_page3 = -1, cur_khoi_page3 = -1, cur_lop_page3 = -1;
         List<Lop> listLop_page3 = new List<Lop>();
         Dictionary<string, int> listNamHoc_page3 = new Dictionary<string, int>();
 
         private void CB_Lop_page3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cur_lop_page3 != -1)
+            {
+                if (!CheckDataGridView_page3())
+                {
+                    CB_Lop_page3.SelectedIndex = cur_lop_page3;
+                    return;
+                }
+            }
+            cur_lop_page3 = CB_Lop_page3.SelectedIndex;
+            GetDataHS();
 
         }
 
         private void CB_Khoi_page3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            cur_CBKhoi_page1 = CB_Khoi.SelectedIndex;
-            CB_Lop.SelectedIndex = -1;
-            CB_Lop.Items.Clear();
-            if (CB_NamHoc.SelectedIndex != -1)
+            if (cur_khoi_page3 != -1)
             {
-                GetMaLop(CB_Khoi.SelectedItem.ToString(), CB_NamHoc.SelectedItem.ToString(), out listLop_page1);
-                foreach (Lop p in listLop_page1)
-                    CB_Lop.Items.Add(p.TenLop);
+                if (!CheckDataGridView_page3())
+                {
+                    CB_Khoi_page3.SelectedIndex = cur_khoi_page3;
+                    return;
+                }
+            }
+            cur_khoi_page3 = CB_Khoi_page3.SelectedIndex;
+            CB_Lop_page3.Text = "";
+            CB_Lop_page3.Items.Clear();
+            if (CB_NamHoc_page3.SelectedIndex != -1)
+            {
+                listLop_page3.Clear();
+                GetMaLop(CB_Khoi_page3.SelectedItem.ToString(), CB_NamHoc_page3.SelectedItem.ToString(), out listLop_page3);
+                foreach (Lop p in listLop_page3)
+                    CB_Lop_page3.Items.Add(p.TenLop);
             }
         }
 
         private void CB_NamHoc_page3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            CB_Lop_page3.SelectedIndex = -1;
+            if (cur_namHoc_page3 != -1)
+            {
+                if (!CheckDataGridView_page3())
+                {
+                    CB_NamHoc_page3.SelectedIndex = cur_namHoc_page3;
+                    return;
+                }
+            }
+            cur_namHoc_page3 = CB_NamHoc_page3.SelectedIndex;
+            CB_Lop_page3.Text = "";
             CB_Lop_page3.Items.Clear();
             if (CB_Khoi_page3.SelectedIndex != -1)
             {
@@ -1097,6 +1175,158 @@ namespace StudentManagementSystem
                     CB_Lop_page3.Items.Add(p.TenLop);
             }
             //curHK_page3 = CB_NamHoc_page3.SelectedItem.ToString();
+        }
+
+        void GetDataHS()
+        {
+            string query = $"SELECT HS.MAHS, HS.HotenHS FROM HOCSINH AS HS, LOP AS L WHERE (HS.MALOP = L.MALOP AND L.TENLOP = '{CB_Lop_page3.SelectedItem.ToString()}' AND L.NAMHOC = '{CB_NamHoc_page3.SelectedItem.ToString()}' AND L.MAKHOI = '{CB_Khoi_page3.SelectedItem.ToString()}') OR EXISTS (SELECT * FROM LOPDAHOC WHERE LOPDAHOC.MAHS = HOCSINH.MAHS AND LOPDAHOC.MALOP = L.MALOP)";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+            int stt = 0;
+            dataGridView_Tongket.Rows.Clear();
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        string maHs = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        string hoTen = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                        listHS_page3.Add(new DiemtrbHS(maHs, hoTen));
+                        var index = dataGridView_Tongket.Rows.Add();
+                        dataGridView_Tongket.Rows[index].Cells[0].Value = (++stt).ToString();//Số thứ tự
+                        dataGridView_Tongket.Rows[index].Cells[1].Value = maHs;
+                        dataGridView_Tongket.Rows[index].Cells[2].Value = hoTen;
+                    }
+                }
+            }
+
+            for (int i = 0; i < listHS_page3.Count; i++)
+            {
+                string _mahs = listHS_page3[i].maHS;
+                query = $"SELECT MAMONHOC, MADIEMMON, TRUNGBINH FROM DIEMMON WHERE MAHK = '{CB_NamHoc_page3.SelectedItem.ToString()}' AND NAMHOC = '{CB_NamHoc_page3.SelectedItem.ToString()}' AND MAHOCSINH = '{_mahs}'";
+                for (int j = 0; j < 13; j++)
+                {
+                    listHS_page3[i].listdiemTrb.Add(new Diemtrb(-1, ""));
+                }
+                cmd = new SqlCommand(query, GlobalProperties.conn);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            string maMh = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                            double trb = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
+                            string maDm = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                            for (int j = 0; j < 13; j++)
+                            {
+                                if (maMh == GlobalProperties.listMaMH[j])
+                                {
+                                    listHS_page3[i].listdiemTrb[j] = new Diemtrb(trb, maDm);
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                query = $"SELECT XEPLOAIHKI, XEPLOAIHKII, MaHK FROM HANHKIEM WHERE MAHS = '{_mahs}' AND NAMHOC = '{CB_NamHoc_page3.SelectedItem.ToString()}'";
+                cmd = new SqlCommand(query, GlobalProperties.conn);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            string hk1 = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                            string hk2 = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                            string maHk = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
+                            listHS_page3[i].hanhKiem1 = hk1;
+                            listHS_page3[i].hanhKiem2 = hk2;
+                            listHS_page3[i].maHKiem = maHk;
+                        }
+                    }
+                }
+            }
+
+            /*string str = "";
+            for (int i = 0; i < 13; i++)
+                str = str + "-(" + listHS_page3[0].listdiemTrb[i].diem + ";" + listHS_page3[0].listdiemTrb[i].maDiemMon + ")";
+            str = str + "\n" + listHS_page3[0].hanhKiem1 + "\n" + listHS_page3[0].hanhKiem2 + "\n" + listHS_page3[0].maHKiem;
+            MessageBox.Show(str);*/
+
+        } //Đã get điểm, đợi hàm tính trb và hạnh kiểm
+        bool CheckDataGridView_page3(bool del = true)
+        {
+            //MessageBox.Show(dataGridView_BangDiem.Rows.Count.ToString());
+            if (dataGridView_Tongket.RowCount > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Thay đổi sẽ làm thay đổi dữ liệu đang hiển thị", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (del)
+                        dataGridView_Tongket.Rows.Clear();
+                    return true;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void CB_Lop_page3_Click(object sender, EventArgs e)
+        {
+            if (CB_Khoi_page3.SelectedIndex < 0 || CB_NamHoc_page3.SelectedIndex < 0)
+            {
+                MessageBox.Show("Chọn năm học và khối trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void TB_search_page3_TextChanged(object sender, EventArgs e)
+        {
+            string text = TB_search_page3.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                for (int i = 0; i < dataGridView_Tongket.RowCount; i++)
+                {
+                    dataGridView_Tongket.Rows[i].Visible = true;
+                }
+            }
+            for (int i = 0; i < dataGridView_Tongket.RowCount; i++)
+            {
+                string mahs = dataGridView_Tongket.Rows[i].Cells[1].Value.ToString();
+                string tenhs = dataGridView_Tongket.Rows[i].Cells[2].Value.ToString();
+                if (!mahs.Contains(text) && !tenhs.Contains(text))
+                {
+                    dataGridView_Tongket.Rows[i].Visible = false;
+                }
+                else
+                {
+                    dataGridView_Tongket.Rows[i].Visible = true;
+                }
+            }
+        }
+
+        private void btn_Reset_p3_Click(object sender, EventArgs e)
+        {
+            cur_namHoc_page3 = -1;
+            cur_khoi_page3 = -1;
+            cur_lop_page3 = -1;
+            listHS_page3 = new List<DiemtrbHS>();
+            listLop_page3 = new List<Lop>();
+            listNamHoc_page3 = new Dictionary<string, int>();
+
+
+            CB_NamHoc_page3.Items.Clear();
+            CB_NamHoc_page3.Text = "";
+            CB_Lop_page3.Items.Clear();
+            CB_Lop_page3.Text = "";
+            CB_Khoi_page3.SelectedIndex = -1;
+            GetandShowMaNamHocpage3();
+            dataGridView_Tongket.Rows.Clear();
         }
 
         void GetandShowMaNamHocpage3()
@@ -1112,61 +1342,677 @@ namespace StudentManagementSystem
         }
 
 
-        //----------Dùng chung các tab-------------
-        void GetNamHoc(out Dictionary<string, int> listNH)
+        //------------------page4-------------------
+
+        List<Lop> listLopCu_page4 = new List<Lop>();
+        List<Lop> listLopMoi_page4 = new List<Lop>();
+        Dictionary<string, int> listNamHoc_page4 = new Dictionary<string, int>();
+        Dictionary<int, int> listChuyen = new Dictionary<int, int>();//key = stt page mới, value = stt page cũ
+
+
+        private void CB_NamHocCu_p4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listNH = new Dictionary<string, int>();
-            //Get 3 năm học trong niên khóa
-            string query = $"SELECT NAMBD, NAMKT FROM NIENKHOA";
+            CB_LopCu_p4.Text = "";
+            CB_LopCu_p4.Items.Clear();
+            dataGridView_page4_lopcu.Rows.Clear();
+            dataGridView_page4_lopmoi.Rows.Clear();
+            if (Cb_KhoiCu_p4.SelectedIndex != -1)
+            {
+                GetLopCu_page4();
+            }
+        }
+
+        private void Cb_KhoiCu_p4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_LopCu_p4.Text = "";
+            CB_LopCu_p4.Items.Clear();
+            dataGridView_page4_lopcu.Rows.Clear();
+            dataGridView_page4_lopmoi.Rows.Clear();
+            if (CB_NamHocCu_p4.SelectedIndex != -1)
+            {
+                GetLopCu_page4();
+            }
+        }
+
+        private void CB_LopCu_p4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string query = $"SELECT HS.MAHS, HS.HotenHS, HS.gioitinh, HS.Ghichu FROM HOCSINH AS HS, LOP AS L WHERE HS.MALOP = L.MALOP AND L.TENLOP = '{CB_LopCu_p4.SelectedItem.ToString()}' AND L.NAMHOC = '{CB_NamHocCu_p4.SelectedItem.ToString()}' AND L.MAKHOI = '{Cb_KhoiCu_p4.SelectedItem.ToString()}'";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+            int stt = 0;
+            dataGridView_page4_lopcu.Rows.Clear();
+            dataGridView_page4_lopmoi.Rows.Clear();
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        string maHs = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        string hoTen = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                        string gioiTinh = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
+                        string ghiChu = rdr.IsDBNull(3) ? GlobalProperties.NULLFIELD : rdr.GetString(3).Trim();
+
+                        var index = dataGridView_page4_lopcu.Rows.Add();
+                        dataGridView_page4_lopcu.Rows[index].Cells[0].Value = (++stt).ToString();//Số thứ tự
+                        dataGridView_page4_lopcu.Rows[index].Cells[1].Value = maHs;
+                        dataGridView_page4_lopcu.Rows[index].Cells[2].Value = hoTen;
+                        dataGridView_page4_lopcu.Rows[index].Cells[3].Value = gioiTinh;
+                        dataGridView_page4_lopcu.Rows[index].Cells[4].Value = ghiChu;
+                    }
+                }
+            }
+        }
+
+        void GetandShowMaNamHocpage4()
+        {
+            CB_NamHocCu_p4.Items.Clear();
+            CB_LopCu_p4.Items.Clear();
+
+            GetNamHoc(out listNamHoc_page4);
+            foreach (KeyValuePair<string, int> kvp in listNamHoc_page4)
+            {
+                CB_NamHocCu_p4.Items.Add(kvp.Key);
+                CB_NamHocMoi_p4.Items.Add(kvp.Key);
+               
+            }
+        }
+
+        private void CB_LopCu_p4_Click(object sender, EventArgs e)
+        {
+            if (CB_NamHocCu_p4.SelectedIndex < 0 || Cb_KhoiCu_p4.SelectedIndex < 0)
+            {
+                MessageBox.Show("Chọn năm học và khối trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dataGridView_page4_lopcu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            int sttCu;
+            Int32.TryParse(dataGridView_page4_lopcu.Rows[e.RowIndex].Cells[0].Value.ToString(), out sttCu);
+            var index = dataGridView_page4_lopmoi.Rows.Add();
+            for (int i = 1; i <= 4; i++)
+            {
+                dataGridView_page4_lopmoi.Rows[index].Cells[i].Value = dataGridView_page4_lopcu.Rows[e.RowIndex].Cells[i].Value;
+            }
+
+            dataGridView_page4_lopmoi.Rows[index].Cells[0].Value = (index + 1).ToString();
+
+            listChuyen[index + 1] = sttCu;
+            dataGridView_page4_lopcu.Rows[e.RowIndex].Visible = false;
+
+        }
+        private void dataGridView_page4_lopmoi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idx = e.RowIndex;
+            if (idx < 0)
+            {
+                return;
+            }
+            int sttCu = listChuyen[idx + 1];
+            dataGridView_page4_lopmoi.Rows.RemoveAt(idx);
+            dataGridView_page4_lopcu.Rows[sttCu - 1].Visible = true;
+            listChuyen.Remove(idx + 1);
+            for (int i = idx; i < dataGridView_page4_lopmoi.RowCount; i++)
+            {
+                int stt;
+                Int32.TryParse(dataGridView_page4_lopcu.Rows[i].Cells[0].Value.ToString(), out stt);
+                dataGridView_page4_lopcu.Rows[i].Cells[0].Value = (stt - 1).ToString();
+                listChuyen[stt - 1] = listChuyen[stt];
+                listChuyen.Remove(stt - 1);
+            }
+        }
+
+        private void CB_KhoiMoi_p4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_LopMoi_p4.Text = "";
+            CB_LopMoi_p4.Items.Clear();
+            if (CB_NamHocMoi_p4.SelectedIndex != -1)
+            {
+                GetLopMoi_page4();
+            }
+        }
+
+        private void CB_NamHocMoi_p4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_LopMoi_p4.Text = "";
+            CB_LopMoi_p4.Items.Clear();
+            if (CB_KhoiMoi_p4.SelectedIndex != -1)
+            {
+                GetLopMoi_page4();
+            }
+        }
+
+        private void CB_LopMoi_p4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        void GetLopCu_page4()
+        {
+            CB_LopCu_p4.Items.Clear();
+            listLopCu_page4.Clear();
+            GetMaLop(Cb_KhoiCu_p4.SelectedItem.ToString(), CB_NamHocCu_p4.SelectedItem.ToString(), out listLopCu_page4);
+            foreach (Lop p in listLopCu_page4)
+                CB_LopCu_p4.Items.Add(p.TenLop);
+        }
+
+        private void btn_ChuyenLop_Click(object sender, EventArgs e)
+        {
+            if (CB_LopMoi_p4.SelectedIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn lớp mới!", "Thông báo");
+                return;
+            }
+            if (CB_LoaiChuyen.SelectedIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn Loại chuyển lớp!", "Thông báo");
+                return;
+            }
+            if (CB_LoaiChuyen.SelectedIndex == 1) //Lên lớp
+            {
+                if (CB_NamHocCu_p4.SelectedItem.ToString() == CB_NamHocMoi_p4.SelectedItem.ToString())
+                {
+                    MessageBox.Show("Lên lớp không chọn cùng năm học!", "Thông báo");
+                    return;
+                }
+            }
+            if (CB_LoaiChuyen.SelectedIndex == 0) //Chuyển lớp
+            {
+                if (CB_NamHocCu_p4.SelectedItem.ToString() != CB_NamHocMoi_p4.SelectedItem.ToString())// ||
+                   // Cb_KhoiCu_p4.SelectedItem.ToString() != CB_KhoiMoi_p4.SelectedItem.ToString())
+                {
+                    MessageBox.Show("Chuyển lớp vui chọn cùng năm học và cùng khối!", "Thông báo");
+                    return;
+                }
+            }
+            if (CB_NamHocCu_p4.SelectedItem.ToString() == CB_NamHocMoi_p4.SelectedItem.ToString() &&
+                Cb_KhoiCu_p4.SelectedItem.ToString() == CB_KhoiMoi_p4.SelectedItem.ToString() &&
+                CB_LopCu_p4.SelectedItem.ToString() == CB_LopMoi_p4.SelectedItem.ToString())
+            {
+                MessageBox.Show("Vui lòng không chọn trùng lớp cũ!", "Thông báo");
+                return;
+            }
+
+            string maLopMoi = listLopMoi_page4[CB_LopMoi_p4.SelectedIndex].MaLop;
+            string maLopCu = listLopCu_page4[CB_LopCu_p4.SelectedIndex].MaLop;
+            string maNamHoc = CB_NamHocMoi_p4.SelectedItem.ToString();
+            string query;
+            SqlCommand cmd;
+            for (int i = 0; i < dataGridView_page4_lopmoi.Rows.Count; i++)
+            {
+                string _maHS = dataGridView_page4_lopmoi.Rows[i].Cells[1].Value.ToString();
+                
+                //Set lại mã lớp cho hs
+                query = $"UPDATE HOCSINH SET MALOP = '{maLopMoi}' WHERE MAHS = '{_maHS}'";
+                try
+                {
+                    cmd = new SqlCommand(query, GlobalProperties.conn);
+                    int rowCount = cmd.ExecuteNonQuery();
+                    if (rowCount == 0)
+                    {
+                        MessageBox.Show($"Không thể thêm học sinh {dataGridView_page4_lopmoi.Rows[i].Cells[2].Value.ToString()}", "Thông báo");
+                    }
+                }
+                catch (Exception ee)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Error: " + ee);
+                    }
+                    return;
+                }
+                if (CB_LoaiChuyen.SelectedIndex == 0)
+                {
+                }
+                else
+                {
+                    //Lên lớp: Lưu tại LOPDAHOC, tạo 2 TABLE DIEMMON mới cho 2 học kì
+                    //1.Check đã có tồn tại lớp này chưa, nếu có rồi thì ko thêm nữa
+                    bool coLopCu = false;
+                    query = $"SELECT COUNT(MALOPDAHOC) FROM LOPDAHOC WHERE MALOP = '{maLopCu}' AND MAHS = '{_maHS}'";
+                    cmd = new SqlCommand(query, GlobalProperties.conn);
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.HasRows)
+                        {
+                            rdr.Read();
+                            int count = rdr.GetInt32(0);
+                            if (count > 0)
+                                coLopCu = true;
+                        }
+                    }
+
+                    if (!coLopCu)// thêm vào LOPDAHOC
+                    {
+                        string key = GetKeyTable("SELECT COUNT(*) FROM LOPDAHOC WHERE MALOPDAHOC = ");
+                        try
+                        {
+                            // Câu lệnh Insert.
+                            query = $"INSERT INTO LOPDAHOC(MALOPDAHOC, MALOP, MAHS) VALUES('{key}', '{maLopCu}', '{_maHS}')";
+
+                            cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                            int rowCount = cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ee)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                MessageBox.Show("Error: " + ee);
+                            }
+                        }
+                    }
+                    //đã có rồi thì thôi, ko thêm nữa 
+
+                    //2.tạo 2 bang diem cho 2 hk năm học mới:
+                    for (int k = 1; k <= 2; k++)
+                    {
+                        string maHK = "HK" + k.ToString();
+                        for (int j = 0; j < 13; j++)
+                        {
+                            string maMonHoc = GlobalProperties.listMaMH[j];
+                            bool coDiemMon = false;
+                            query = $"SELECT COUNT(*) FROM DIEMMON WHERE MAMONHOC = '{maMonHoc}' AND NAMHOC = '{maNamHoc}' AND MAHK = '{maHK}'";
+                            cmd = new SqlCommand(query, GlobalProperties.conn);
+                            using (SqlDataReader rdr = cmd.ExecuteReader())
+                            {
+                                if (rdr.HasRows)
+                                {
+                                    rdr.Read();
+                                    int count = rdr.GetInt32(0);
+                                    if (count > 0)
+                                        coDiemMon = true;
+                                }
+                            }
+
+                            if (!coDiemMon)
+                            {
+                                //Tao DIEMMON moi
+                                string key = GetKeyTable("SELECT COUNT(*) FROM DIEMMON WHERE MADIEMMON = ");
+                                try
+                                {
+                                    // Câu lệnh Insert.
+                                    query = $"INSERT INTO DIEMMON(MADIEMMON, MAMONHOC, MAHK, NAMHOC, MAHOCSINH) VALUES('{key}', '{maMonHoc}', '{maHK}', '{maNamHoc}', '{_maHS}')";
+
+                                    cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                                    int rowCount = cmd.ExecuteNonQuery();
+                                }
+                                catch (Exception ee)
+                                {
+                                    DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
+                                    if (dialogResult == DialogResult.Yes)
+                                    {
+                                        MessageBox.Show("Error: " + ee);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            MessageBox.Show("Đã lưu", "Thông báo!");
+            CB_LopCu_p4_SelectedIndexChanged(sender, e);
+            dataGridView_page4_lopmoi.Rows.Clear();
+
+        }
+
+        void GetLopMoi_page4()
+        {
+            CB_LopMoi_p4.Items.Clear();
+            listLopMoi_page4.Clear();
+            GetMaLop(CB_KhoiMoi_p4.SelectedItem.ToString(), CB_NamHocMoi_p4.SelectedItem.ToString(), out listLopMoi_page4);
+            foreach (Lop p in listLopMoi_page4)
+                CB_LopMoi_p4.Items.Add(p.TenLop);
+        }
+
+        private void g_TextChanged(object sender, EventArgs e) //Search_page4
+        {
+            string text = TB_search_page4.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                for (int i = 0; i < dataGridView_page4_lopcu.RowCount; i++)
+                {
+                    dataGridView_page4_lopcu.Rows[i].Visible = true;
+                }
+            }
+            for (int i = 0; i < dataGridView_page4_lopcu.RowCount; i++)
+            {
+                string mahs = dataGridView_page4_lopcu.Rows[i].Cells[1].Value.ToString();
+                string tenhs = dataGridView_page4_lopcu.Rows[i].Cells[2].Value.ToString();
+                if (!mahs.Contains(text) && !tenhs.Contains(text))
+                {
+                    dataGridView_page4_lopcu.Rows[i].Visible = false;
+                }
+                else
+                {
+                    dataGridView_page4_lopcu.Rows[i].Visible = true;
+                }
+            }
+            foreach (KeyValuePair<int, int> kvp in listChuyen)
+            {
+                dataGridView_page4_lopcu.Rows[kvp.Value -1].Visible = false;
+            }
+        }
+        private void btn_reset_p4_Click(object sender, EventArgs e)
+        {
+            listLopCu_page4 = new List<Lop>();
+            listLopMoi_page4 = new List<Lop>();
+            listNamHoc_page4 = new Dictionary<string, int>();
+            listChuyen = new Dictionary<int, int>();//key = stt page mới, value = stt page cũ
+            CB_NamHocCu_p4.Text = "";
+            CB_LopCu_p4.Text = "";
+            CB_NamHocMoi_p4.Text = "";
+            CB_LopMoi_p4.Text = "";
+
+            GetandShowMaNamHocpage4();
+            dataGridView_page4_lopcu.Rows.Clear();
+            dataGridView_page4_lopmoi.Rows.Clear();
+        }
+
+        //---------page5------------------
+        List<GiaoVien> listGV = new List<GiaoVien>();
+        Dictionary<string, int> listNamHoc_page5 = new Dictionary<string, int>();
+        string curKhoi_p5, curNamHoc_p5;
+        void LoadPage5()
+        {
+            datetimepicker_nienkhoa_p5.Format = DateTimePickerFormat.Custom;
+            datetimepicker_nienkhoa_p5.CustomFormat = "yyyy";
+            datetimepicker_nienkhoa_p5.ShowUpDown = true;
+            GetandShowMaNamHocpage5();
+        }
+
+        void GetandShowMaNamHocpage5()
+        {
+            CB_NamHoc_p5.Text = "";
+            CB_NamHoc_p5.Items.Clear();
+            GetNamHoc(out listNamHoc_page5);
+            foreach (KeyValuePair<string, int> kvp in listNamHoc_page5)
+            {
+                CB_NamHoc_p5.Items.Add(kvp.Key);
+            }
+        }
+        private void btn_hienthinienkhoap5_Click(object sender, EventArgs e)
+        {
+            dataGridView_nienkhoa_p5.Rows.Clear();
+            string query = "SELECT MANK, NAMBD, NAMKT FROM NIENKHOA";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+            
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        var index = dataGridView_nienkhoa_p5.Rows.Add();
+                        for (int i = 0; i < 3; i++)
+                        {
+                            dataGridView_nienkhoa_p5.Rows[index].Cells[i].Value = rdr.IsDBNull(i) ? GlobalProperties.NULLFIELD : rdr.GetString(i).Trim();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void datetimepicker_nienkhoa_p5_ValueChanged(object sender, EventArgs e)
+        {
+            TB_NamKT_p5.Text = (datetimepicker_nienkhoa_p5.Value.Year + 3).ToString();
+            TB_MaNK_p5.Text = datetimepicker_nienkhoa_p5.Value.Year.ToString() + "-" + TB_NamKT_p5.Text;
+
+        }
+
+        private void btn_ThemNK_p5_Click(object sender, EventArgs e)
+        {
+            string query = $"INSERT INTO NIENKHOA(MANK, NAMBD, NAMKT) VALUES('{TB_MaNK_p5.Text}', '{datetimepicker_nienkhoa_p5.Value.Year.ToString()}', '{TB_NamKT_p5.Text}')";
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+                int rowCount = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Không thể thêm niên khóa!", "Thông báo");
+            }
+            btn_hienthinienkhoap5.PerformClick();
+            
+        }
+
+        private void btn_hienthi_Lop_p5_Click(object sender, EventArgs e)
+        {
+            
+            if (CB_NamHoc_p5.SelectedIndex != -1 && CB_Khoi_p5.SelectedIndex != -1)
+            {
+                dataGridView_Lop_p5.Rows.Clear();
+                string query = $"SELECT L.MALOP, L.TENLOP, GV.TENGV FROM LOP AS L, GIAOVIEN AS GV WHERE GV.MAGV =  L.MAGVCN AND L.MAKHOI = '{CB_Khoi_p5.SelectedItem.ToString()}' AND L.NAMHOC = '{CB_NamHoc_p5.SelectedItem.ToString()}'";
+                SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            var index = dataGridView_Lop_p5.Rows.Add();
+                            for (int i = 0; i < 3; i++)
+                            {
+                                dataGridView_Lop_p5.Rows[index].Cells[i].Value = rdr.IsDBNull(i) ? GlobalProperties.NULLFIELD : rdr.GetString(i).Trim();
+                            }
+                        }
+                    }
+                }
+                curKhoi_p5 = CB_Khoi_p5.SelectedItem.ToString();
+                curNamHoc_p5 = CB_NamHoc_p5.SelectedItem.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Chọn năm học và khối trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e) //get thong tin giaos vieen
+        {
+            CB_gv_p5.Items.Clear();
+            listGV.Clear();
+            string query = $"SELECT GV.TENGV, GV.MAGV, GV.MAMH FROM  GIAOVIEN AS GV;";
             SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
 
             using (SqlDataReader rdr = cmd.ExecuteReader())
             {
                 if (rdr.HasRows)
                 {
-                    string bd = "", kt = "";
                     while (rdr.Read())
                     {
-                        bd = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
-                        kt = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
-                        int namBD = 0, namKT = 0;
-                        Int32.TryParse(bd, out namBD);
-                        Int32.TryParse(kt, out namKT);
-                        if (namBD == 0 || namKT == 0)
-                        {
-                            continue;
-                        }
-                        listNH[namBD.ToString() + "-" + (namBD + 1).ToString()] = 1;
-                        listNH[(namBD + 1).ToString() + "-" + (namBD + 2).ToString()] = 1;
-                        listNH[(namBD + 2).ToString() + "-" + (namBD + 3).ToString()] = 1;
+                        string ten =  rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        string magv = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                        string mamh = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
+                        listGV.Add(new GiaoVien(magv, mamh, ten));
+                        CB_gv_p5.Items.Add(ten + " - " + magv);
                     }
-
+                    
                 }
             }
         }
+
+        private void CB_NamHoc_p5_Click(object sender, EventArgs e)
+        {
+            GetandShowMaNamHocpage5();
+        }
+
+        private void CB_gv_p5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //notthing
+        }
+
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TB_TenLopTao.Text) || CB_gv_p5.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng nhập tên lớp và chọn giáo viên chủ nhiệm!", "Thông báo");
+                return;
+            }
+            string key = GetKeyTable("SELECT COUNT(*) FROM LOP WHERE MALOP = ");
+            for (int i = 0; i < dataGridView_Lop_p5.Rows.Count; i++)
+            {
+                if (dataGridView_Lop_p5.Rows[i].Cells[1].Value.ToString().ToLower() == TB_TenLopTao.Text.ToString().Trim().ToLower())
+                {
+                    MessageBox.Show("Tên lớp đã tồn tại!", "Thông báo");
+                    return;
+                }
+            }
+            try
+            {
+                string magv = listGV[CB_gv_p5.SelectedIndex].MaGV;
+                // Câu lệnh Insert.
+                string query = $"INSERT INTO LOP(MALOP, MAKHOI, MAGVCN, TENLOP,  NAMHOC) VALUES('{key}', '{curKhoi_p5}', '{magv}', '{TB_TenLopTao.Text.ToString().Trim()}', '{curNamHoc_p5}')";
+
+                SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                int rowCount = cmd.ExecuteNonQuery();
+                MessageBox.Show("Đã lưu", "Thông báo");
+                comboBox1_Click(sender, e);
+
+
+            }
+            catch (Exception ee)
+            {
+                DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show("Error: " + ee);
+                }
+            }
+        }
+
+        //----------Dùng chung các tab-------------
+        string GetKeyTable(string query)
+        {
+            string key = "";
+            bool f = false;
+            //Tạo mới.
+            do
+            {
+                key = GlobalFunction.RandomString(10);
+                string sql = query + $"'{key}'";
+                SqlCommand cmd = new SqlCommand(sql, GlobalProperties.conn);
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        rdr.Read();
+                        int count = rdr.GetInt32(0);
+                        if (count > 0)
+                            f = false;
+                        else
+                            f = true;
+
+                    }
+                }
+
+            } while (!f);
+            //MessageBox.Show(keyMaDiemMon);
+            return key;
+        }
+        void GetNamHoc(out Dictionary<string, int> listNH)
+            {
+                listNH = new Dictionary<string, int>();
+                //Get 3 năm học trong niên khóa
+                string query = $"SELECT NAMBD, NAMKT FROM NIENKHOA";
+                SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        string bd = "", kt = "";
+                        while (rdr.Read())
+                        {
+                            bd = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                            kt = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                            int namBD = 0, namKT = 0;
+                            Int32.TryParse(bd, out namBD);
+                            Int32.TryParse(kt, out namKT);
+                            if (namBD == 0 || namKT == 0)
+                            {
+                                continue;
+                            }
+                            listNH[namBD.ToString() + "-" + (namBD + 1).ToString()] = 1;
+                            listNH[(namBD + 1).ToString() + "-" + (namBD + 2).ToString()] = 1;
+                            listNH[(namBD + 2).ToString() + "-" + (namBD + 3).ToString()] = 1;
+                        }
+
+                    }
+                }
+            }
 
         void GetMaLop(string maKhoi, string maNamHoc, out List<Lop> listLop)
-        {
-            listLop = new List<Lop>();
-            //Get mã niên khóa:
-            string query = $"SELECT MALOP, MAGVCN, TENLOP, SISO FROM LOP WHERE MAKHOI = '{maKhoi}' AND NAMHOC = '{maNamHoc}'";
-            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
-
-            using (SqlDataReader rdr = cmd.ExecuteReader())
             {
-                if (rdr.HasRows)
-                {
-                    while (rdr.Read())
-                    {
-                        string _maLop = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
-                        string _maGVCN = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
-                        string _tenLop = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
-                        string _siSo = rdr.IsDBNull(3) ? GlobalProperties.NULLFIELD : rdr.GetString(3).Trim();
+                listLop = new List<Lop>();
+                //Get mã niên khóa:
+                string query = $"SELECT MALOP, MAGVCN, TENLOP, SISO FROM LOP WHERE MAKHOI = '{maKhoi}' AND NAMHOC = '{maNamHoc}'";
+                SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
 
-                        listLop.Add(new Lop(_maLop, maKhoi, _maGVCN, _tenLop, _siSo));
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            string _maLop = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                            string _maGVCN = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                            string _tenLop = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
+                        string _siSo = rdr.IsDBNull(3) ? GlobalProperties.NULLFIELD : rdr.GetInt32(3).ToString();
+
+                            listLop.Add(new Lop(_maLop, maKhoi, _maGVCN, _tenLop, _siSo));
+                        }
                     }
                 }
-            }
+            } 
+
+        class diemTongKet
+        {
+            public string xepLoai;
+            public double diemTrungBinh;
+            public string hanhKiem;
         }
+
+        diemTongKet TinhDiemTongKetHocKi(List<double> diem, int _hanhKiem)
+        {
+            diemTongKet hs = new diemTongKet();
+
+            //code here;
+            hs.xepLoai = "giỏi";
+            hs.diemTrungBinh = 9.8;
+            
+            hs.hanhKiem = "kém"; //ko sửa
+
+            //hanh kiem: 0: kem, 1: trung binh, 2: kha, 3: tot;
+            //Listdiem.count = 13
+            //diem[11]: diem the duc
+            //listTenMH = { "Toán học", "Ngữ văn", "Vật lí", "Hóa học", "Sinh học", "Tin học", "Lịch sử", "Địa lí", "Ngoại ngữ", "GDCD", "Công nghệ", "Thể dục", "GDQP" };
+            return hs;
+        }
+
+        diemTongKet TinhDiemTongKetCanam(List<double> diemhk1, int hanhKiemhk1, List<double> diemhk2, int hanhKiemhk2)
+        {
+            diemTongKet hs = new diemTongKet();
+
+            //code here;
+            hs.xepLoai = "gioi";
+            hs.diemTrungBinh = 9.8;
+            hs.hanhKiem = "kém"; //ko sửa
+
+            //hanh kiem: 0: kem, 1: trung binh, 2: kha, 3: tot;
+            //Listdiem.count = 13
+            //diem[11]: diem the duc
+            //listTenMH = { "Toán học", "Ngữ văn", "Vật lí", "Hóa học", "Sinh học", "Tin học", "Lịch sử", "Địa lí", "Ngoại ngữ", "GDCD", "Công nghệ", "Thể dục", "GDQP" };
+            return hs;
+        }
+
     }
 }

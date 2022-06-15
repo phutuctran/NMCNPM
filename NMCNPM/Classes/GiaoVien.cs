@@ -23,6 +23,14 @@ namespace StudentManagementSystem.Classes
         private string email;
 
         public GiaoVien() { }
+
+        public GiaoVien(string maGV, string maMH, string tenGV)
+        {
+            this.maGV = maGV;
+            this.maMH = maMH;
+            this.tenGV = tenGV;
+        }
+
         public GiaoVien(string maGV, string maMH, string maTK, string tenGV, string diaChi, string namSinh, string gioiTinh, string sdt, string email)
         {
             this.maGV = maGV;

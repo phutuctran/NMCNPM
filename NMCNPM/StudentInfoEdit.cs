@@ -210,7 +210,7 @@ namespace StudentManagementSystem
                 }
             }
 
-
+            GetDataStudent();
             ShowDataPage1();
             MessageBox.Show("Đã lưu!", "Thông báo");
 
@@ -245,7 +245,7 @@ namespace StudentManagementSystem
             }
 
             btn_TinhDTB.PerformClick();
-            string sqlDiemTB = "";
+            //string sqlDiemTB = "";
             
             //Cập nhật các cột điểm, chưa có điểm TRB
             for (int i = 0; i < soMon; i++)

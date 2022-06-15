@@ -39,7 +39,12 @@ namespace StudentManagementSystem.Classes
         {
             this.maHS = maHS;
             this.hoTen = hoTen;
-
+        }
+        public HocSinh(string maHS, string hoTen, string maLop)
+        {
+            this.maHS = maHS;
+            this.hoTen = hoTen;
+            this.maLop = maLop;
         }
 
         public HocSinh(string maHS, string maLop, string maTK, string hoTen, string ngaySinh, string diaChi, string noiSinh, string sdt,

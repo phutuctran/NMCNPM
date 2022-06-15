@@ -41,6 +41,7 @@ namespace StudentManagementSystem
             }
             return img;
         }
+
         public static string RandomString(int length)
         {
             Random random = new Random();
