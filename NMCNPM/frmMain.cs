@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudentManagementSystem.Classes;
 using StudentManagementSystem.DatabaseCore;
+using System.Text.RegularExpressions;
 
 namespace StudentManagementSystem
 {
@@ -38,9 +39,9 @@ namespace StudentManagementSystem
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //tabMain.Appearance = TabAppearance.FlatButtons;
-            //tabMain.ItemSize = new Size(0, 1);
-            //tabMain.SizeMode = TabSizeMode.Fixed;
+            tabMain.Appearance = TabAppearance.FlatButtons;
+            tabMain.ItemSize = new Size(0, 1);
+            tabMain.SizeMode = TabSizeMode.Fixed;
             GetandShowMaNamHoc();
             GetandShowMaNamHocpage2();
             GetandShowMaNamHocpage3();
@@ -48,6 +49,87 @@ namespace StudentManagementSystem
             LoadPage5();
         }
 
+        //Event menu
+        private void bunifuIconButton5_Click(object sender, EventArgs e)
+        {
+            btn_TabThemHS.PerformClick();
+        }
+
+        private void bunifuIconButton7_Click(object sender, EventArgs e)
+        {
+            btn_tabThemGV_GD.PerformClick();
+        }
+
+        private void bunifuIconButton1_Click(object sender, EventArgs e)
+        {
+            btn_tabBangDiem.PerformClick();
+        }
+
+        private void bunifuIconButton2_Click(object sender, EventArgs e)
+        {
+            btn_tab_Thongtin.PerformClick();
+        }
+
+        private void bunifuIconButton3_Click(object sender, EventArgs e)
+        {
+            btn_tab_tongket.PerformClick();
+        }
+
+        private void bunifuIconButton4_Click(object sender, EventArgs e)
+        {
+            btn_tabChuyenLop.PerformClick();
+        }
+
+        private void bunifuIconButton6_Click(object sender, EventArgs e)
+        {
+            btn_tab_themNK_HK.PerformClick();
+        }
+
+        private void bunifuIconButton8_Click(object sender, EventArgs e)
+        {
+            btn_CaiDat.PerformClick();
+        }
+
+        private void btn_tab_Thongtin_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 1;
+        }
+
+        private void btn_tab_tongket_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 2;
+        }
+
+        private void btn_tabChuyenLop_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 3;
+        }
+
+        private void btn_tab_themNK_HK_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 4;
+        }
+
+        private void btn_tabBangDiem_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 0;
+        }
+
+        private void btn_TabThemHS_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 5;
+        }
+
+        private void btn_tabThemGV_GD_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 6;
+        }
+
+        private void btn_CaiDat_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 7;
+        }
+        //----------------------Page1----------------------
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             if (panel_Menu.Width > 75)
@@ -1459,10 +1541,10 @@ namespace StudentManagementSystem
             for (int i = idx; i < dataGridView_page4_lopmoi.RowCount; i++)
             {
                 int stt;
-                Int32.TryParse(dataGridView_page4_lopcu.Rows[i].Cells[0].Value.ToString(), out stt);
-                dataGridView_page4_lopcu.Rows[i].Cells[0].Value = (stt - 1).ToString();
+                Int32.TryParse(dataGridView_page4_lopmoi.Rows[i].Cells[0].Value.ToString(), out stt);
+                dataGridView_page4_lopmoi.Rows[i].Cells[0].Value = (stt - 1).ToString();
                 listChuyen[stt - 1] = listChuyen[stt];
-                listChuyen.Remove(stt - 1);
+                //listChuyen.Remove(stt);
             }
         }
 
@@ -1522,8 +1604,8 @@ namespace StudentManagementSystem
             }
             if (CB_LoaiChuyen.SelectedIndex == 0) //Chuyển lớp
             {
-                if (CB_NamHocCu_p4.SelectedItem.ToString() != CB_NamHocMoi_p4.SelectedItem.ToString())// ||
-                   // Cb_KhoiCu_p4.SelectedItem.ToString() != CB_KhoiMoi_p4.SelectedItem.ToString())
+                if (CB_NamHocCu_p4.SelectedItem.ToString() != CB_NamHocMoi_p4.SelectedItem.ToString() ||
+                    Cb_KhoiCu_p4.SelectedItem.ToString() != CB_KhoiMoi_p4.SelectedItem.ToString())
                 {
                     MessageBox.Show("Chuyển lớp vui chọn cùng năm học và cùng khối!", "Thông báo");
                     return;
@@ -1611,50 +1693,7 @@ namespace StudentManagementSystem
                     //đã có rồi thì thôi, ko thêm nữa 
 
                     //2.tạo 2 bang diem cho 2 hk năm học mới:
-                    for (int k = 1; k <= 2; k++)
-                    {
-                        string maHK = "HK" + k.ToString();
-                        for (int j = 0; j < 13; j++)
-                        {
-                            string maMonHoc = GlobalProperties.listMaMH[j];
-                            bool coDiemMon = false;
-                            query = $"SELECT COUNT(*) FROM DIEMMON WHERE MAMONHOC = '{maMonHoc}' AND NAMHOC = '{maNamHoc}' AND MAHK = '{maHK}'";
-                            cmd = new SqlCommand(query, GlobalProperties.conn);
-                            using (SqlDataReader rdr = cmd.ExecuteReader())
-                            {
-                                if (rdr.HasRows)
-                                {
-                                    rdr.Read();
-                                    int count = rdr.GetInt32(0);
-                                    if (count > 0)
-                                        coDiemMon = true;
-                                }
-                            }
-
-                            if (!coDiemMon)
-                            {
-                                //Tao DIEMMON moi
-                                string key = GetKeyTable("SELECT COUNT(*) FROM DIEMMON WHERE MADIEMMON = ");
-                                try
-                                {
-                                    // Câu lệnh Insert.
-                                    query = $"INSERT INTO DIEMMON(MADIEMMON, MAMONHOC, MAHK, NAMHOC, MAHOCSINH) VALUES('{key}', '{maMonHoc}', '{maHK}', '{maNamHoc}', '{_maHS}')";
-
-                                    cmd = new SqlCommand(query, GlobalProperties.conn);
-
-                                    int rowCount = cmd.ExecuteNonQuery();
-                                }
-                                catch (Exception ee)
-                                {
-                                    DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
-                                    if (dialogResult == DialogResult.Yes)
-                                    {
-                                        MessageBox.Show("Error: " + ee);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    TaoTableDiemMon2HK(maNamHoc, _maHS);
                 }
             }
             MessageBox.Show("Đã lưu", "Thông báo!");
@@ -1849,7 +1888,7 @@ namespace StudentManagementSystem
             //notthing
         }
 
-        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        private void materialRaisedButton5_Click(object sender, EventArgs e) //Thêm lớp mới
         {
             if (string.IsNullOrEmpty(TB_TenLopTao.Text) || CB_gv_p5.SelectedIndex == -1)
             {
@@ -1887,6 +1926,177 @@ namespace StudentManagementSystem
                     MessageBox.Show("Error: " + ee);
                 }
             }
+        }
+
+        //-------------page6------------------------------
+
+        List<Lop> listLop_page6 = new List<Lop>();
+        private void TB_MaHS_p6_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(TB_MaHS_p6.Text, @"^\d+$"))
+            {
+                Checkbox_Mahs.Checked = false;
+                return;
+            }
+            if (!string.IsNullOrEmpty(TB_MaHS_p6.Text) && CheckMaHS(TB_MaHS_p6.Text))
+            {
+                Checkbox_Mahs.Checked = true;
+                tb_Username_p6.Text = "HS" + TB_MaHS_p6.Text;
+            }
+            else
+            {
+                Checkbox_Mahs.Checked = false;
+            }
+        }
+
+        private void btn_random_mahs_mk_Click(object sender, EventArgs e)
+        {
+            TB_matkhau_p6.Text = GlobalFunction.RandomString(6);
+            string _maHS;
+            do
+            {
+                _maHS = GlobalFunction.RandomStringInt(8);
+                if (CheckMaHS(_maHS))
+                {
+                    TB_MaHS_p6.Text = _maHS;
+                    tb_Username_p6.Text = "HS" + _maHS;
+                    break;
+                }
+            } while (true);
+
+        }
+
+        private void btn_Luu_p6_Click(object sender, EventArgs e)
+        {
+           // Checkbox_Mah
+            if (!Checkbox_Mahs.Checked)
+            {
+                MessageBox.Show("Mã học sinh không hợp lệ hoặc bị trùng. \n Mã học sinh chỉ bao gồm số", "Thông báo");
+                return;
+            }  
+            if (string.IsNullOrEmpty(TB_HoTen_p6.Text) ||
+                string.IsNullOrEmpty(dateEdit_NgaySinh_p6.Text) ||
+                string.IsNullOrEmpty(CB_Gioitinh_p6.SelectedItem.ToString()))
+            {
+                MessageBox.Show("Học sinh phải đảm bảo có tối thiểu 3 thông tin: Họ tên, Ngày sinh, Giới tính", "Thông báo");
+                return;
+            }
+            if (CB_Lop_p6.SelectedIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn Lớp học", "Thông báo");
+                return;
+            }
+            if (string.IsNullOrEmpty(TB_matkhau_p6.Text))
+            {
+                TB_matkhau_p6.Text = GlobalFunction.RandomString(6);
+            }
+
+            //Tạo tài khoản
+            string _mataikhoan = GetKeyTable("SELECT COUNT(*) FROM TAIKHOAN WHERE MATK = ");
+            string query = $"INSERT INTO TAIKHOAN(MATK, USERNAME, PASS) VALUES('{_mataikhoan}', '{tb_Username_p6.Text}', '{TB_matkhau_p6.Text}')";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+            int rowCount = cmd.ExecuteNonQuery();
+
+            //Tạo học sinh:
+            string _maHS = TB_MaHS_p6.Text;
+            string _maLop = listLop_page6[CB_Lop_p6.SelectedIndex].MaLop;
+            string _hoTen = TB_HoTen_p6.Text;
+            string _ngaySinh = dateEdit_NgaySinh_p6.Text;
+            string _diaChi = TB_DiaChi_p6.Text;
+            string _gioiTinh = CB_Gioitinh_p6.SelectedItem.ToString();
+            string _nienKhoa = CB_NienKhoa_p6.SelectedItem.ToString();
+            string _maNamHoc = CB_NamHoc_p6.SelectedItem.ToString();
+
+            query = $"INSERT INTO HOCSINH(MAHS, MALOP, MATK, HotenHS, ngaysinh, diachi,	gioitinh, nienkhoa)	VALUES('{_maHS}', '{_maLop}', '{_mataikhoan}', N'{_hoTen}', '{_ngaySinh}', N'{_diaChi}', N'{_gioiTinh}', '{_nienKhoa}')";
+            cmd = new SqlCommand(query, GlobalProperties.conn);
+            rowCount = cmd.ExecuteNonQuery();
+
+            TaoTableDiemMon2HK(_maNamHoc, _maHS);
+            MessageBox.Show("Đã lưu", "Thông báo!");
+        }
+
+        private void CB_NamHoc_p6_Click(object sender, EventArgs e)
+        {
+            if (CB_NienKhoa_p6.SelectedIndex < 0)
+            {
+                MessageBox.Show("Chọn niên khóa trước", "Thông báo");
+            }
+            string nK = CB_NienKhoa_p6.SelectedItem.ToString();
+            CB_NamHoc_p6.Items.Clear();
+            string[] nam = nK.Split('-');
+            int namBD = 0, namKT = 0;
+            Int32.TryParse(nam[0], out namBD);
+            Int32.TryParse(nam[1], out namKT);
+            CB_NamHoc_p6.Items.Add(namBD.ToString() + "-" + (namBD + 1).ToString());
+            CB_NamHoc_p6.Items.Add((namBD + 1).ToString() + "-" + (namBD + 2).ToString());
+            CB_NamHoc_p6.Items.Add((namBD + 2).ToString() + "-" + (namBD + 3).ToString());
+        }
+
+        private void CB_Lop_p6_Click(object sender, EventArgs e)
+        {
+            if (CB_NamHoc_p6.SelectedIndex < 0 && CB_Khoi_p6.SelectedIndex < 0)
+            {
+                MessageBox.Show("Vui lòng chọn năm học và khối!", "Thông báo");
+            }
+            listLop_page6.Clear();
+            GetMaLop(CB_Khoi_p6.Text, CB_NamHoc_p6.Text, out listLop_page6);
+            for (int i = 0; i < listLop_page6.Count; i++)
+            {
+                CB_Lop_p6.Items.Add(listLop_page6[i].TenLop);
+            }
+        }
+
+        private void btn_delete_p6_Click(object sender, EventArgs e)
+        {
+            TB_HoTen_p6.Clear();
+            dateEdit_NgaySinh_p6.Text = "";
+            TB_DiaChi_p6.Clear();
+            CB_Gioitinh_p6.Text = "";
+            TB_SDT_p6.Clear();
+            TB_MaHS_p6.Text = "";
+            tb_Username_p6.Text = "";
+            TB_matkhau_p6.Text = "";
+        }
+
+        private void CB_NienKhoa_p6_Click(object sender, EventArgs e)
+        {
+            CB_NienKhoa_p6.Items.Clear();
+            string query = "SELECT MANK FROM NIENKHOA";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        CB_NienKhoa_p6.Items.Add(rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim());
+                    }
+                    
+                }
+            }
+
+        }
+
+        bool CheckMaHS(string mahs)
+        {
+            string query = $"SELECT COUNT(*) FROM HOCSINH WHERE MAHS = '{mahs}'";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    rdr.Read();
+                    int count = rdr.GetInt32(0);
+                    if (count > 0)
+                        return false;
+                    else
+                        return true;
+                }
+            }
+            return false;
+
         }
 
         //----------Dùng chung các tab-------------
@@ -1973,6 +2183,55 @@ namespace StudentManagementSystem
                     }
                 }
             } 
+        void TaoTableDiemMon2HK(string maNamHoc, string maHS)
+        {
+            string query;
+            SqlCommand cmd;
+            for (int k = 1; k <= 2; k++)
+            {
+                string maHK = "HK" + k.ToString();
+                for (int j = 0; j < 13; j++)
+                {
+                    string maMonHoc = GlobalProperties.listMaMH[j];
+                    bool coDiemMon = false;
+                    query = $"SELECT COUNT(*) FROM DIEMMON WHERE MAMONHOC = '{maMonHoc}' AND NAMHOC = '{maNamHoc}' AND MAHK = '{maHK}'";
+                    cmd = new SqlCommand(query, GlobalProperties.conn);
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.HasRows)
+                        {
+                            rdr.Read();
+                            int count = rdr.GetInt32(0);
+                            if (count > 0)
+                                coDiemMon = true;
+                        }
+                    }
+
+                    if (!coDiemMon)
+                    {
+                        //Tao DIEMMON moi
+                        string key = GetKeyTable("SELECT COUNT(*) FROM DIEMMON WHERE MADIEMMON = ");
+                        try
+                        {
+                            // Câu lệnh Insert.
+                            query = $"INSERT INTO DIEMMON(MADIEMMON, MAMONHOC, MAHK, NAMHOC, MAHOCSINH) VALUES('{key}', '{maMonHoc}', '{maHK}', '{maNamHoc}', '{maHS}')";
+
+                            cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                            int rowCount = cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ee)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                MessageBox.Show("Error: " + ee);
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         class diemTongKet
         {

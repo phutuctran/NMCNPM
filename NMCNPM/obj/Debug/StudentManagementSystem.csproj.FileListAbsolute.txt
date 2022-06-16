@@ -649,3 +649,11 @@ D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraPrinting.v19.2.dll
 D:\DANMCNPM\SMS\NMCNPM\NMCNPM\obj\Debug\StudentManagementSystem.csprojAssemblyReference.cache
 D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\CSharpVitamins.ShortGuid.dll
 D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\CSharpVitamins.ShortGuid.xml
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\DevExpress.SpellChecker.v19.2.Core.dll
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraSpellChecker.v19.2.dll
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\DevExpress.SpellChecker.v19.2.Core.xml
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\DevExpress.XtraSpellChecker.v19.2.xml
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\de\DevExpress.XtraSpellChecker.v19.2.resources.dll
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\es\DevExpress.XtraSpellChecker.v19.2.resources.dll
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\ja\DevExpress.XtraSpellChecker.v19.2.resources.dll
+D:\DANMCNPM\SMS\NMCNPM\NMCNPM\bin\Debug\ru\DevExpress.XtraSpellChecker.v19.2.resources.dll

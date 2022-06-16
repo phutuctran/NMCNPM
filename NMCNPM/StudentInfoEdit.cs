@@ -811,7 +811,7 @@ namespace StudentManagementSystem
             //Thông tin học sinh
             string query = @"SELECT HS.MAHS, HS.HotenHS, HS.NgaySinh, HS.diachi, HS.gioitinh, HS.nienkhoa, HS.dantoc,
                             HS.tongiao, HS.tencha, HS.nghenghiepcha, HS.ngaysinhcha, HS.tenme, HS.nghenghiepme, 
-                            HS.ngaysinhme, HS.ghichu, L.TENLOP, HS.noisinh, HS.email, HS.sodt, HS.noisinh
+                            HS.ngaysinhme, HS.ghichu, L.TENLOP, HS.noisinh, HS.sodt, HS.email
                             FROM HOCSINH AS HS
                             LEFT JOIN LOP AS L ON L.MALOP = HS.MALOP
                             WHERE HS.MAHS = " + $"'{MaHS}'";
@@ -839,8 +839,10 @@ namespace StudentManagementSystem
                         studentInfo.GhiChu = rdr.IsDBNull(14) ? GlobalProperties.NULLFIELD : rdr.GetString(14);
                         studentInfo.MaLop = rdr.IsDBNull(15) ? GlobalProperties.NULLFIELD : rdr.GetString(15).Trim();
                         studentInfo.NoiSinh = rdr.IsDBNull(16) ? GlobalProperties.NULLFIELD : rdr.GetString(16).Trim();
+                        studentInfo.Sdt = rdr.IsDBNull(17) ? GlobalProperties.NULLFIELD : rdr.GetString(17).Trim();
+                        studentInfo.Email = rdr.IsDBNull(18) ? GlobalProperties.NULLFIELD : rdr.GetString(18).Trim();
                         //rdr.GetBytes
-                        
+
                     }
 
                 }
