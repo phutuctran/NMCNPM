@@ -144,7 +144,7 @@ namespace StudentManagementSystem
                         //MessageBox.Show(maHS);
                         if (!string.IsNullOrEmpty(maHS))
                         {/////////////////////////////////////////
-                            using (Form frm = new StudentInfoEdit(maHS))
+                            using (Form frm = new StudentInfo(maHS))
                             {
                                 frm.ShowDialog();
                                 GC.Collect();
