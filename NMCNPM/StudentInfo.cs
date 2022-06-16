@@ -40,7 +40,7 @@ namespace StudentManagementSystem
             //Thông tin học sinh
             string query = @"SELECT HS.MAHS, HS.HotenHS, HS.NgaySinh, HS.diachi, HS.gioitinh, HS.nienkhoa, HS.dantoc,
                             HS.tongiao, HS.tencha, HS.nghenghiepcha, HS.ngaysinhcha, HS.tenme, HS.nghenghiepme, 
-                            HS.ngaysinhme, HS.ghichu, L.TENLOP, HS.noisinh, HS.email, HS.sodt
+                            HS.ngaysinhme, HS.ghichu, L.TENLOP, HS.noisinh, HS.email, HS.sodt, HS.noisinh
                             FROM HOCSINH AS HS
                             LEFT JOIN LOP AS L ON L.MALOP = HS.MALOP
                             WHERE HS.MAHS = " + $"'{MaHS}'";
@@ -62,13 +62,13 @@ namespace StudentManagementSystem
                         LB_TonGiao.Text = rdr.IsDBNull(7) ? GlobalProperties.NULLFIELD : rdr.GetString(7);
                         LB_TenCha.Text = rdr.IsDBNull(8) ? GlobalProperties.NULLFIELD : rdr.GetString(8);
                         LB_NgheNghiepCha.Text = rdr.IsDBNull(9) ? GlobalProperties.NULLFIELD : rdr.GetString(9);
-                        LB_NamSinhCha.Text = rdr.IsDBNull(10) ? GlobalProperties.NULLFIELD : rdr.GetString(10);
+                        LB_NamSinhCha.Text = rdr.IsDBNull(10) ? GlobalProperties.NULLFIELD : rdr.GetDateTime(10).ToString("yyyy");
                         LB_TenMe.Text = rdr.IsDBNull(11) ? GlobalProperties.NULLFIELD : rdr.GetString(11);
                         LB_NgheNghiepMe.Text = rdr.IsDBNull(12) ? GlobalProperties.NULLFIELD : rdr.GetString(12);
-                        LB_NamSinhMe.Text = rdr.IsDBNull(13) ? GlobalProperties.NULLFIELD : rdr.GetString(13);
+                        LB_NamSinhMe.Text = rdr.IsDBNull(13) ? GlobalProperties.NULLFIELD : rdr.GetDateTime(13).ToString("yyyy");
                         LB_GhiChu.Text = rdr.IsDBNull(14) ? GlobalProperties.NULLFIELD : rdr.GetString(14);
                         LB_Lop.Text = @"Lớp: " + (rdr.IsDBNull(15) ? GlobalProperties.NULLFIELD : rdr.GetString(15).Trim());
-
+                        LB_NoiSinh.Text = rdr.IsDBNull(16) ? GlobalProperties.NULLFIELD : rdr.GetString(16);
                     }
 
                 }
@@ -304,7 +304,7 @@ namespace StudentManagementSystem
                                     diem[f].DDGCK = new DTP(diemtp, maDiemMon);
                                 }
 
-                                diem[f].DDGTRB = new DTP(diemtp, maDiemMon);
+                                diem[f].DDGTRB = new DTP(diemtrb, maDiemMon);
                             }
 
                         }
@@ -335,6 +335,21 @@ namespace StudentManagementSystem
             //LV_BangDiem.Show();
             ///hihi
             ///
+        }
+
+        private void LB_NamSinhMe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

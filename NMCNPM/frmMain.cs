@@ -470,6 +470,10 @@ namespace StudentManagementSystem
 
         void ShowBangDiem()
         {
+            if (listHocSinh_page1.Count < 1)
+            {
+                return;
+            }
             for (int i = 0; i < listHocSinh_page1.Count; i++)
             {
                 DiemHocSinh p = listHocSinh_page1[i];
@@ -1258,7 +1262,7 @@ namespace StudentManagementSystem
 
         void GetDataHS()
         {
-            string query = $"SELECT HS.MAHS, HS.HotenHS FROM HOCSINH AS HS, LOP AS L WHERE (HS.MALOP = L.MALOP AND L.TENLOP = '{CB_Lop_page3.SelectedItem.ToString()}' AND L.NAMHOC = '{CB_NamHoc_page3.SelectedItem.ToString()}' AND L.MAKHOI = '{CB_Khoi_page3.SelectedItem.ToString()}') OR EXISTS (SELECT * FROM LOPDAHOC WHERE LOPDAHOC.MAHS = HOCSINH.MAHS AND LOPDAHOC.MALOP = L.MALOP)";
+            string query = $"SELECT HS.MAHS, HS.HotenHS FROM HOCSINH AS HS, LOP AS L WHERE (HS.MALOP = L.MALOP AND L.TENLOP = '{CB_Lop_page3.SelectedItem.ToString()}' AND L.NAMHOC = '{CB_NamHoc_page3.SelectedItem.ToString()}' AND L.MAKHOI = '{CB_Khoi_page3.SelectedItem.ToString()}') OR EXISTS (SELECT * FROM LOPDAHOC WHERE LOPDAHOC.MAHS = HS.MAHS AND LOPDAHOC.MALOP = L.MALOP)";
             SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
             int stt = 0;
             dataGridView_Tongket.Rows.Clear();
@@ -1326,6 +1330,22 @@ namespace StudentManagementSystem
                             listHS_page3[i].maHKiem = maHk;
                         }
                     }
+                }
+            }
+
+            query = $"SELECT L.TENLOP, L.SISO, GV.TENGV FROM LOP AS L, GIAOVIEN AS GV WHERE L.TENLOP = '{CB_Lop_page3.SelectedItem.ToString()}' AND L.NAMHOC = '{CB_NamHoc_page3.SelectedItem.ToString()}' AND L.MAGVCN = GV.MAGV";
+            cmd = new SqlCommand(query, GlobalProperties.conn);
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    rdr.Read();
+                    string tenLop = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                    int siSo = rdr.IsDBNull(1) ? 0 : rdr.GetInt32(1);
+                    string tenGV = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
+                    lb_siso_p3.Text = "Sĩ số: " + siSo.ToString();
+                    lb_tenlop_p3.Text = "Lớp: " + tenLop;
+                    lb_tengvcn_p3.Text = "GVCN: " + tenGV;
                 }
             }
 
@@ -1908,6 +1928,7 @@ namespace StudentManagementSystem
             {
                 string magv = listGV[CB_gv_p5.SelectedIndex].MaGV;
                 // Câu lệnh Insert.
+                MessageBox.Show(curKhoi_p5 + " " + magv + " " + TB_TenLopTao.Text.ToString() + " " + curNamHoc_p5);
                 string query = $"INSERT INTO LOP(MALOP, MAKHOI, MAGVCN, TENLOP,  NAMHOC) VALUES('{key}', '{curKhoi_p5}', '{magv}', '{TB_TenLopTao.Text.ToString().Trim()}', '{curNamHoc_p5}')";
 
                 SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
@@ -1915,6 +1936,9 @@ namespace StudentManagementSystem
                 int rowCount = cmd.ExecuteNonQuery();
                 MessageBox.Show("Đã lưu", "Thông báo");
                 comboBox1_Click(sender, e);
+                btn_hienthinienkhoap5.PerformClick();
+                CB_gv_p5.SelectedIndex = -1;
+                CB_gv_p5.Text = "";
 
 
             }
@@ -1976,9 +2000,19 @@ namespace StudentManagementSystem
             }
             if (string.IsNullOrEmpty(TB_HoTen_p6.Text) ||
                 string.IsNullOrEmpty(dateEdit_NgaySinh_p6.Text) ||
-                string.IsNullOrEmpty(CB_Gioitinh_p6.SelectedItem.ToString()))
+                CB_Gioitinh_p6.SelectedIndex < 0)
             {
                 MessageBox.Show("Học sinh phải đảm bảo có tối thiểu 3 thông tin: Họ tên, Ngày sinh, Giới tính", "Thông báo");
+                return;
+            }
+            if (string.IsNullOrEmpty(TB_SDT_p6.Text) ||
+                Check_sdt.Checked == true)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Số điện thoại sai định dạng", "Thông báo");
                 return;
             }
             if (CB_Lop_p6.SelectedIndex < 0)
@@ -2022,7 +2056,7 @@ namespace StudentManagementSystem
             dataGridView_HSThem_p6.Rows[index].Cells[3].Value = _sodt;
             dataGridView_HSThem_p6.Rows[index].Cells[4].Value = _diaChi;
             dataGridView_HSThem_p6.Rows[index].Cells[5].Value = _maHS;
-            dataGridView_HSThem_p6.Rows[index].Cells[6].Value = _mataikhoan;
+            dataGridView_HSThem_p6.Rows[index].Cells[6].Value = tb_Username_p6.Text;
             dataGridView_HSThem_p6.Rows[index].Cells[7].Value = TB_matkhau_p6.Text;
 
 
@@ -2055,6 +2089,7 @@ namespace StudentManagementSystem
 
         private void CB_Lop_p6_Click(object sender, EventArgs e)
         {
+            CB_Lop_p6.Items.Clear();
             if (CB_NamHoc_p6.SelectedIndex < 0 && CB_Khoi_p6.SelectedIndex < 0)
             {
                 MessageBox.Show("Vui lòng chọn năm học và khối!", "Thông báo");
@@ -2123,6 +2158,39 @@ namespace StudentManagementSystem
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void CB_NienKhoa_p6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CB_NamHoc_p6.SelectedIndex = -1;
+            CB_NamHoc_p6.Text = "";
+            CB_NamHoc_p6.Items.Clear();
+            CB_Lop_p6.SelectedIndex = -1;
+            CB_Lop_p6.Text = "";
+            CB_Lop_p6.Items.Clear();
+        }
+
+        private void CB_Khoi_p6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            CB_Lop_p6.SelectedIndex = -1;
+            CB_Lop_p6.Text = "";
+            CB_Lop_p6.Items.Clear();
+        }
+
+        private void TB_SDT_p6_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(TB_SDT_p6.Text, @"^\d+$"))
+            {
+                Checkbox_Mahs.Checked = false;
+            }
+            else
+            {
+                if (TB_SDT_p6.Text.Length == 10)
+                {
+                    Checkbox_Mahs.Checked = true;
+                }
+            }
         }
 
         //----------Dùng chung các tab-------------

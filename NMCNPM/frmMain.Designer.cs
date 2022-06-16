@@ -157,9 +157,9 @@ namespace StudentManagementSystem
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lb_siso_p3 = new System.Windows.Forms.Label();
+            this.lb_tenlop_p3 = new System.Windows.Forms.Label();
+            this.lb_tengvcn_p3 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_Reset_p3 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -246,6 +246,14 @@ namespace StudentManagementSystem
             this.Tabthemhs = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
             this.dataGridView_HSThem_p6 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel14 = new System.Windows.Forms.Panel();
             this.CB_NienKhoa_p6 = new System.Windows.Forms.ComboBox();
             this.label55 = new System.Windows.Forms.Label();
@@ -280,14 +288,7 @@ namespace StudentManagementSystem
             this.label43 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Check_sdt = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.panel_Menu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabMain.SuspendLayout();
@@ -1255,7 +1256,7 @@ namespace StudentManagementSystem
             this.btn_HoanTac_page1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_HoanTac_page1.Depth = 0;
             this.btn_HoanTac_page1.Icon = null;
-            this.btn_HoanTac_page1.Location = new System.Drawing.Point(147, 583);
+            this.btn_HoanTac_page1.Location = new System.Drawing.Point(135, 583);
             this.btn_HoanTac_page1.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_HoanTac_page1.Name = "btn_HoanTac_page1";
             this.btn_HoanTac_page1.Primary = true;
@@ -1271,7 +1272,7 @@ namespace StudentManagementSystem
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(278, 583);
+            this.materialRaisedButton2.Location = new System.Drawing.Point(254, 583);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
             this.materialRaisedButton2.Primary = true;
@@ -1804,9 +1805,9 @@ namespace StudentManagementSystem
             this.panel6.Controls.Add(this.materialRaisedButton1);
             this.panel6.Controls.Add(this.materialRaisedButton3);
             this.panel6.Controls.Add(this.materialRaisedButton4);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.lb_siso_p3);
+            this.panel6.Controls.Add(this.lb_tenlop_p3);
+            this.panel6.Controls.Add(this.lb_tengvcn_p3);
             this.panel6.Controls.Add(this.label24);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(1047, 78);
@@ -1830,7 +1831,7 @@ namespace StudentManagementSystem
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(147, 583);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(127, 537);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -1845,7 +1846,7 @@ namespace StudentManagementSystem
             this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton3.Depth = 0;
             this.materialRaisedButton3.Icon = null;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(278, 583);
+            this.materialRaisedButton3.Location = new System.Drawing.Point(234, 537);
             this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton3.Name = "materialRaisedButton3";
             this.materialRaisedButton3.Primary = true;
@@ -1860,7 +1861,7 @@ namespace StudentManagementSystem
             this.materialRaisedButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton4.Depth = 0;
             this.materialRaisedButton4.Icon = null;
-            this.materialRaisedButton4.Location = new System.Drawing.Point(22, 583);
+            this.materialRaisedButton4.Location = new System.Drawing.Point(22, 537);
             this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton4.Name = "materialRaisedButton4";
             this.materialRaisedButton4.Primary = true;
@@ -1869,38 +1870,38 @@ namespace StudentManagementSystem
             this.materialRaisedButton4.Text = "Tính ĐTB";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // lb_siso_p3
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.DimGray;
-            this.label20.Location = new System.Drawing.Point(28, 293);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(47, 20);
-            this.label20.TabIndex = 18;
-            this.label20.Text = "Sĩ số:";
+            this.lb_siso_p3.AutoSize = true;
+            this.lb_siso_p3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_siso_p3.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_siso_p3.Location = new System.Drawing.Point(28, 293);
+            this.lb_siso_p3.Name = "lb_siso_p3";
+            this.lb_siso_p3.Size = new System.Drawing.Size(47, 20);
+            this.lb_siso_p3.TabIndex = 18;
+            this.lb_siso_p3.Text = "Sĩ số:";
             // 
-            // label21
+            // lb_tenlop_p3
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.DimGray;
-            this.label21.Location = new System.Drawing.Point(28, 334);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 20);
-            this.label21.TabIndex = 17;
-            this.label21.Text = "Tên lớp:";
+            this.lb_tenlop_p3.AutoSize = true;
+            this.lb_tenlop_p3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_tenlop_p3.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_tenlop_p3.Location = new System.Drawing.Point(28, 334);
+            this.lb_tenlop_p3.Name = "lb_tenlop_p3";
+            this.lb_tenlop_p3.Size = new System.Drawing.Size(66, 20);
+            this.lb_tenlop_p3.TabIndex = 17;
+            this.lb_tenlop_p3.Text = "Tên lớp:";
             // 
-            // label22
+            // lb_tengvcn_p3
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.DimGray;
-            this.label22.Location = new System.Drawing.Point(28, 373);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 20);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "GVCN:";
+            this.lb_tengvcn_p3.AutoSize = true;
+            this.lb_tengvcn_p3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_tengvcn_p3.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_tengvcn_p3.Location = new System.Drawing.Point(28, 373);
+            this.lb_tengvcn_p3.Name = "lb_tengvcn_p3";
+            this.lb_tengvcn_p3.Size = new System.Drawing.Size(55, 20);
+            this.lb_tengvcn_p3.TabIndex = 16;
+            this.lb_tengvcn_p3.Text = "GVCN:";
             // 
             // label24
             // 
@@ -3026,9 +3027,63 @@ namespace StudentManagementSystem
             this.dataGridView_HSThem_p6.TabIndex = 0;
             this.dataGridView_HSThem_p6.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Họ tên";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Ngày sinh";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Giới tính";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 70;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số điện thoại";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Địa chỉ";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 160;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Mã HS";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Tên tài khoản";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 130;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Mật khẩu";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 150;
+            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.LightCyan;
+            this.panel14.Controls.Add(this.Check_sdt);
             this.panel14.Controls.Add(this.CB_NienKhoa_p6);
             this.panel14.Controls.Add(this.label55);
             this.panel14.Controls.Add(this.btn_random_mahs_mk);
@@ -3057,6 +3112,7 @@ namespace StudentManagementSystem
             this.CB_NienKhoa_p6.Name = "CB_NienKhoa_p6";
             this.CB_NienKhoa_p6.Size = new System.Drawing.Size(121, 21);
             this.CB_NienKhoa_p6.TabIndex = 47;
+            this.CB_NienKhoa_p6.SelectedIndexChanged += new System.EventHandler(this.CB_NienKhoa_p6_SelectedIndexChanged);
             this.CB_NienKhoa_p6.Click += new System.EventHandler(this.CB_NienKhoa_p6_Click);
             // 
             // label55
@@ -3296,6 +3352,7 @@ namespace StudentManagementSystem
             this.TB_SDT_p6.Name = "TB_SDT_p6";
             this.TB_SDT_p6.Size = new System.Drawing.Size(198, 27);
             this.TB_SDT_p6.TabIndex = 36;
+            this.TB_SDT_p6.TextChanged += new System.EventHandler(this.TB_SDT_p6_TextChanged);
             // 
             // dateEdit_NgaySinh_p6
             // 
@@ -3436,6 +3493,7 @@ namespace StudentManagementSystem
             this.CB_Khoi_p6.Name = "CB_Khoi_p6";
             this.CB_Khoi_p6.Size = new System.Drawing.Size(72, 21);
             this.CB_Khoi_p6.TabIndex = 22;
+            this.CB_Khoi_p6.SelectedIndexChanged += new System.EventHandler(this.CB_Khoi_p6_SelectedIndexChanged);
             // 
             // CB_NamHoc_p6
             // 
@@ -3477,58 +3535,59 @@ namespace StudentManagementSystem
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // Check_sdt
             // 
-            this.Column1.HeaderText = "Họ tên";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Ngày sinh";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Giới tính";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 70;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Số điện thoại";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 160;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Mã HS";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Tên tài khoản";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 130;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Mật khẩu";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 150;
+            this.Check_sdt.AllowBindingControlAnimation = true;
+            this.Check_sdt.AllowBindingControlColorChanges = false;
+            this.Check_sdt.AllowBindingControlLocation = true;
+            this.Check_sdt.AllowCheckBoxAnimation = false;
+            this.Check_sdt.AllowCheckmarkAnimation = true;
+            this.Check_sdt.AllowOnHoverStates = true;
+            this.Check_sdt.AutoCheck = false;
+            this.Check_sdt.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.Check_sdt.BackColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Check_sdt.BackgroundImage")));
+            this.Check_sdt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Check_sdt.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.Check_sdt.BorderRadius = 12;
+            this.Check_sdt.Checked = false;
+            this.Check_sdt.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.Check_sdt.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Check_sdt.CustomCheckmarkImage = null;
+            this.Check_sdt.Location = new System.Drawing.Point(347, 179);
+            this.Check_sdt.MinimumSize = new System.Drawing.Size(17, 17);
+            this.Check_sdt.Name = "Check_sdt";
+            this.Check_sdt.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.Check_sdt.OnCheck.BorderRadius = 12;
+            this.Check_sdt.OnCheck.BorderThickness = 2;
+            this.Check_sdt.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.Check_sdt.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.Check_sdt.OnCheck.CheckmarkThickness = 2;
+            this.Check_sdt.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.Check_sdt.OnDisable.BorderRadius = 12;
+            this.Check_sdt.OnDisable.BorderThickness = 2;
+            this.Check_sdt.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.Check_sdt.OnDisable.CheckmarkThickness = 2;
+            this.Check_sdt.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.Check_sdt.OnHoverChecked.BorderRadius = 12;
+            this.Check_sdt.OnHoverChecked.BorderThickness = 2;
+            this.Check_sdt.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.Check_sdt.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.Check_sdt.OnHoverChecked.CheckmarkThickness = 2;
+            this.Check_sdt.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.Check_sdt.OnHoverUnchecked.BorderRadius = 12;
+            this.Check_sdt.OnHoverUnchecked.BorderThickness = 1;
+            this.Check_sdt.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.Check_sdt.OnUncheck.BorderRadius = 12;
+            this.Check_sdt.OnUncheck.BorderThickness = 1;
+            this.Check_sdt.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.Size = new System.Drawing.Size(21, 21);
+            this.Check_sdt.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.Check_sdt.TabIndex = 48;
+            this.Check_sdt.ThreeState = false;
+            this.Check_sdt.ToolTipText = null;
             // 
             // frmMain
             // 
@@ -3683,9 +3742,9 @@ namespace StudentManagementSystem
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lb_siso_p3;
+        private System.Windows.Forms.Label lb_tenlop_p3;
+        private System.Windows.Forms.Label lb_tengvcn_p3;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -3834,5 +3893,6 @@ namespace StudentManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private Bunifu.UI.WinForms.BunifuCheckBox Check_sdt;
     }
 }

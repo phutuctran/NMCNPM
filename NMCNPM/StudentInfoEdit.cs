@@ -24,6 +24,8 @@ namespace StudentManagementSystem
 {
     public partial class StudentInfoEdit : MaterialForm
     {
+
+        Dictionary<string, string> check_HK_NH = new Dictionary<string, string>();
         byte[] imageByte;
         int soMon = 13;
         string MaHS;
@@ -43,6 +45,15 @@ namespace StudentManagementSystem
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             GetDataStudent();
             ShowData();
+            //datepicker_hs.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            //datepicker_hs.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            //datepicker_hs.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            //Datepicker_cha.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            //Datepicker_cha.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            //Datepicker_cha.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            //Datepicker_me.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            //Datepicker_me.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            //Datepicker_me.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             //MessageBox.Show(Datepicker_cha.Text);
 
         }
@@ -59,6 +70,7 @@ namespace StudentManagementSystem
         //Xem thông tin bảng điểm
         private void btn_xem_Click(object sender, EventArgs e)
         {
+            diemTrBHK = 0;
             diem = new List<DiemThanhPhan>();
             int idx = CB_ttHK_NH.SelectedIndex;
             if (idx < 0)
@@ -129,12 +141,13 @@ namespace StudentManagementSystem
                 MessageBox.Show(w.ToString());
                 return;
             }
-            //Update Ngày sinh
+            //MessageBox.Show(Datepicker_cha.Text);
+        //   //Update Ngày sinh
             if (!String.IsNullOrWhiteSpace(datepicker_hs.Text.Trim()))
             {
                 try
                 {
-
+                    //MessageBox.Show(datepicker_hs);
                     SqlCommand cmd = new SqlCommand(sqlUpdateNgaySinh, GlobalProperties.conn);
 
                     cmd.Parameters.Add("@ngaysinh", SqlDbType.SmallDateTime).Value = datepicker_hs.Text;
@@ -157,6 +170,7 @@ namespace StudentManagementSystem
                 {
 
                     SqlCommand cmd = new SqlCommand(sqlUpdateNgaySinhMe, GlobalProperties.conn);
+
 
                     cmd.Parameters.Add("@sinhme", SqlDbType.SmallDateTime).Value = Datepicker_me.Text;
                     cmd.Parameters.Add("@MAHS", SqlDbType.Char).Value = MaHS.ToString();
@@ -209,7 +223,7 @@ namespace StudentManagementSystem
                     return;
                 }
             }
-
+            CB_ttHK_NH.Items.Clear();
             GetDataStudent();
             ShowDataPage1();
             MessageBox.Show("Đã lưu!", "Thông báo");
@@ -875,7 +889,8 @@ namespace StudentManagementSystem
             }
             catch { }
 
-
+            check_HK_NH.Clear();
+            ttBangDiem.Clear();
             ////Lấy thông tin về học kì và năm học:
             query = @"SELECT DISTINCT DM.MAHK, DM.NAMHOC
                     FROM DIEMMON AS DM
@@ -891,6 +906,11 @@ namespace StudentManagementSystem
                     {
                         string hk = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
                         string namHoc = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                        if (check_HK_NH.ContainsKey(namHoc) && check_HK_NH[namHoc] == hk)
+                        {
+                            continue;
+                        }
+                        check_HK_NH[namHoc] = hk;
                         ttBangDiem.Add(((string, string))(hk, namHoc));
                     }
                 }
