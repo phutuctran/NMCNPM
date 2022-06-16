@@ -328,13 +328,13 @@ namespace StudentManagementSystem
             {
                 return;
             }
-            
+
             if (CB_MonHoc.SelectedIndex == -1)
             {
                 return;
             }
             GetDiemHocSinh();
-            
+
         }
 
         private void CB_MonHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -370,7 +370,7 @@ namespace StudentManagementSystem
             for (int i = 0; i < listHocSinh_page1.Count; i++)
             {
                 DiemHocSinh p = listHocSinh_page1[i];
-                
+
                 string _maHS = p.HS.MaHS;
                 string _maHK = CB_HocKi.SelectedItem.ToString();
                 string _namHoc = CB_NamHoc.SelectedItem.ToString();
@@ -411,7 +411,7 @@ namespace StudentManagementSystem
                             string loaiKT = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
                             double diemtp = rdr.IsDBNull(0) ? -1 : rdr.GetDouble(0);
                             double diemTB = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
-                           // MessageBox.Show(_tenMH + " " + maDiemMon + " " + loaiKT + " " + diemtp + " " + diemTB);
+                            // MessageBox.Show(_tenMH + " " + maDiemMon + " " + loaiKT + " " + diemtp + " " + diemTB);
                             if (diemtp != -1)
                             {
                                 listHocSinh_page1[i].DTP.MaMH = _maMon;
@@ -461,10 +461,10 @@ namespace StudentManagementSystem
                 {
                     rdr.Read();
                     string tenGVBM = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
-                    lb_GVBM_page1.Text = "GVBM: " +  tenGVBM;
+                    lb_GVBM_page1.Text = "GVBM: " + tenGVBM;
                 }
             }
-            lb_HK_page1.Text =  "Học kì: " + CB_HocKi.SelectedItem.ToString();
+            lb_HK_page1.Text = "Học kì: " + CB_HocKi.SelectedItem.ToString();
             lb_MonHoc_page1.Text = "Môn học: " + CB_MonHoc.SelectedItem.ToString();
         }
 
@@ -474,11 +474,11 @@ namespace StudentManagementSystem
             {
                 DiemHocSinh p = listHocSinh_page1[i];
                 dataGridView_BangDiem.Rows[i].Cells[3].Value = p.DTP.DDGTX1.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTX1.diem.ToString();
-                dataGridView_BangDiem.Rows[i].Cells[4].Value = p.DTP.DDGTX2.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTX2.diem.ToString(); 
-                dataGridView_BangDiem.Rows[i].Cells[5].Value = p.DTP.DDGTX3.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTX3.diem.ToString(); 
-                dataGridView_BangDiem.Rows[i].Cells[6].Value = p.DTP.DDGTX4.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTX4.diem.ToString(); 
-                dataGridView_BangDiem.Rows[i].Cells[7].Value = p.DTP.DDGGK.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGGK.diem.ToString(); 
-                dataGridView_BangDiem.Rows[i].Cells[8].Value = p.DTP.DDGCK.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGCK.diem.ToString(); 
+                dataGridView_BangDiem.Rows[i].Cells[4].Value = p.DTP.DDGTX2.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTX2.diem.ToString();
+                dataGridView_BangDiem.Rows[i].Cells[5].Value = p.DTP.DDGTX3.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTX3.diem.ToString();
+                dataGridView_BangDiem.Rows[i].Cells[6].Value = p.DTP.DDGTX4.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTX4.diem.ToString();
+                dataGridView_BangDiem.Rows[i].Cells[7].Value = p.DTP.DDGGK.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGGK.diem.ToString();
+                dataGridView_BangDiem.Rows[i].Cells[8].Value = p.DTP.DDGCK.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGCK.diem.ToString();
                 dataGridView_BangDiem.Rows[i].Cells[9].Value = p.DTP.DDGTRB.diem == -1 ? GlobalProperties.NULLFIELD : p.DTP.DDGTRB.diem.ToString();
             }
         }
@@ -521,7 +521,7 @@ namespace StudentManagementSystem
                     dataGridView_BangDiem.Rows[i].Cells[9].Value = "";
                 }
             }
-            
+
         }
 
         private void btn_HoanTac_page1_Click(object sender, EventArgs e)
@@ -890,7 +890,7 @@ namespace StudentManagementSystem
             listLop_page1.Clear();
             listHocSinh_page1.Clear();
             listNamHoc_page1.Clear();
-            
+
             CB_NamHoc.Items.Clear();
             CB_NamHoc.Text = "";
             CB_Lop.Items.Clear();
@@ -1060,12 +1060,12 @@ namespace StudentManagementSystem
             CB_Lop_page2.SelectedIndex = -1;
             CB_Lop_page2.Items.Clear();
             dataGridView_ThongTinHocSinh.Rows.Clear();
-            
+
         }
 
         private void TB_Search_page2_TextChanged(object sender, EventArgs e)
         {
-           
+
             string text = TB_Search_page2.Text;
             if (string.IsNullOrEmpty(text))
             {
@@ -1492,7 +1492,7 @@ namespace StudentManagementSystem
             {
                 CB_NamHocCu_p4.Items.Add(kvp.Key);
                 CB_NamHocMoi_p4.Items.Add(kvp.Key);
-               
+
             }
         }
 
@@ -1624,7 +1624,7 @@ namespace StudentManagementSystem
             for (int i = 0; i < dataGridView_page4_lopmoi.Rows.Count; i++)
             {
                 string _maHS = dataGridView_page4_lopmoi.Rows[i].Cells[1].Value.ToString();
-                
+
                 //Set lại mã lớp cho hs
                 query = $"UPDATE HOCSINH SET MALOP = '{maLopMoi}' WHERE MAHS = '{_maHS}'";
                 try
@@ -1648,7 +1648,7 @@ namespace StudentManagementSystem
                 if (CB_LoaiChuyen.SelectedIndex == 0)
                 {
                     //Tạo thêm bảng DIEMMON cho HS nào còn thiếu
-                    
+
                 }
                 else
                 {
@@ -1736,7 +1736,7 @@ namespace StudentManagementSystem
             }
             foreach (KeyValuePair<int, int> kvp in listChuyen)
             {
-                dataGridView_page4_lopcu.Rows[kvp.Value -1].Visible = false;
+                dataGridView_page4_lopcu.Rows[kvp.Value - 1].Visible = false;
             }
         }
         private void btn_reset_p4_Click(object sender, EventArgs e)
@@ -1782,7 +1782,7 @@ namespace StudentManagementSystem
             dataGridView_nienkhoa_p5.Rows.Clear();
             string query = "SELECT MANK, NAMBD, NAMKT FROM NIENKHOA";
             SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
-            
+
             using (SqlDataReader rdr = cmd.ExecuteReader())
             {
                 if (rdr.HasRows)
@@ -1819,12 +1819,12 @@ namespace StudentManagementSystem
                 MessageBox.Show("Không thể thêm niên khóa!", "Thông báo");
             }
             btn_hienthinienkhoap5.PerformClick();
-            
+
         }
 
         private void btn_hienthi_Lop_p5_Click(object sender, EventArgs e)
         {
-            
+
             if (CB_NamHoc_p5.SelectedIndex != -1 && CB_Khoi_p5.SelectedIndex != -1)
             {
                 dataGridView_Lop_p5.Rows.Clear();
@@ -1867,13 +1867,13 @@ namespace StudentManagementSystem
                 {
                     while (rdr.Read())
                     {
-                        string ten =  rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        string ten = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
                         string magv = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
                         string mamh = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
                         listGV.Add(new GiaoVien(magv, mamh, ten));
                         CB_gv_p5.Items.Add(ten + " - " + magv);
                     }
-                    
+
                 }
             }
         }
@@ -1968,12 +1968,12 @@ namespace StudentManagementSystem
 
         private void btn_Luu_p6_Click(object sender, EventArgs e)
         {
-           // Checkbox_Mah
+            // Checkbox_Mah
             if (!Checkbox_Mahs.Checked)
             {
                 MessageBox.Show("Mã học sinh không hợp lệ hoặc bị trùng. \n Mã học sinh chỉ bao gồm số", "Thông báo");
                 return;
-            }  
+            }
             if (string.IsNullOrEmpty(TB_HoTen_p6.Text) ||
                 string.IsNullOrEmpty(dateEdit_NgaySinh_p6.Text) ||
                 string.IsNullOrEmpty(CB_Gioitinh_p6.SelectedItem.ToString()))
@@ -2093,7 +2093,7 @@ namespace StudentManagementSystem
                     {
                         CB_NienKhoa_p6.Items.Add(rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim());
                     }
-                    
+
                 }
             }
 
@@ -2155,60 +2155,60 @@ namespace StudentManagementSystem
             return key;
         }
         void GetNamHoc(out Dictionary<string, int> listNH)
+        {
+            listNH = new Dictionary<string, int>();
+            //Get 3 năm học trong niên khóa
+            string query = $"SELECT NAMBD, NAMKT FROM NIENKHOA";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+
+            using (SqlDataReader rdr = cmd.ExecuteReader())
             {
-                listNH = new Dictionary<string, int>();
-                //Get 3 năm học trong niên khóa
-                string query = $"SELECT NAMBD, NAMKT FROM NIENKHOA";
-                SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
-
-                using (SqlDataReader rdr = cmd.ExecuteReader())
+                if (rdr.HasRows)
                 {
-                    if (rdr.HasRows)
+                    string bd = "", kt = "";
+                    while (rdr.Read())
                     {
-                        string bd = "", kt = "";
-                        while (rdr.Read())
+                        bd = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        kt = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                        int namBD = 0, namKT = 0;
+                        Int32.TryParse(bd, out namBD);
+                        Int32.TryParse(kt, out namKT);
+                        if (namBD == 0 || namKT == 0)
                         {
-                            bd = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
-                            kt = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
-                            int namBD = 0, namKT = 0;
-                            Int32.TryParse(bd, out namBD);
-                            Int32.TryParse(kt, out namKT);
-                            if (namBD == 0 || namKT == 0)
-                            {
-                                continue;
-                            }
-                            listNH[namBD.ToString() + "-" + (namBD + 1).ToString()] = 1;
-                            listNH[(namBD + 1).ToString() + "-" + (namBD + 2).ToString()] = 1;
-                            listNH[(namBD + 2).ToString() + "-" + (namBD + 3).ToString()] = 1;
+                            continue;
                         }
+                        listNH[namBD.ToString() + "-" + (namBD + 1).ToString()] = 1;
+                        listNH[(namBD + 1).ToString() + "-" + (namBD + 2).ToString()] = 1;
+                        listNH[(namBD + 2).ToString() + "-" + (namBD + 3).ToString()] = 1;
+                    }
 
+                }
+            }
+        }
+
+        void GetMaLop(string maKhoi, string maNamHoc, out List<Lop> listLop)
+        {
+            listLop = new List<Lop>();
+            //Get mã niên khóa:
+            string query = $"SELECT MALOP, MAGVCN, TENLOP, SISO FROM LOP WHERE MAKHOI = '{maKhoi}' AND NAMHOC = '{maNamHoc}'";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        string _maLop = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        string _maGVCN = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                        string _tenLop = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
+                        string _siSo = rdr.IsDBNull(3) ? GlobalProperties.NULLFIELD : rdr.GetInt32(3).ToString();
+
+                        listLop.Add(new Lop(_maLop, maKhoi, _maGVCN, _tenLop, _siSo));
                     }
                 }
             }
-
-        void GetMaLop(string maKhoi, string maNamHoc, out List<Lop> listLop)
-            {
-                listLop = new List<Lop>();
-                //Get mã niên khóa:
-                string query = $"SELECT MALOP, MAGVCN, TENLOP, SISO FROM LOP WHERE MAKHOI = '{maKhoi}' AND NAMHOC = '{maNamHoc}'";
-                SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
-
-                using (SqlDataReader rdr = cmd.ExecuteReader())
-                {
-                    if (rdr.HasRows)
-                    {
-                        while (rdr.Read())
-                        {
-                            string _maLop = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
-                            string _maGVCN = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
-                            string _tenLop = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
-                        string _siSo = rdr.IsDBNull(3) ? GlobalProperties.NULLFIELD : rdr.GetInt32(3).ToString();
-
-                            listLop.Add(new Lop(_maLop, maKhoi, _maGVCN, _tenLop, _siSo));
-                        }
-                    }
-                }
-            } 
+        }
         void TaoTableDiemMon2HK(string maNamHoc, string maHS)
         {
             string query;
@@ -2266,24 +2266,98 @@ namespace StudentManagementSystem
             public string hanhKiem;
         }
 
-        diemTongKet TinhDiemTongKetHocKi(List<double> diem, int _hanhKiem)
+        diemTongKet TinhDiemTongKetHocKy(List<double> diem, int _hanhKiem)
         {
             diemTongKet hs = new diemTongKet();
 
             //code here;
-            hs.xepLoai = "giỏi";
-            hs.diemTrungBinh = 9.8;
-            
-            hs.hanhKiem = "kém"; //ko sửa
+            int soMonHoc = diem.Count();
+            double sum = 0;
+            for (int i = 0; i < soMonHoc; i++)
+            {
+                sum += diem[i];
+            }
+            hs.diemTrungBinh = sum / soMonHoc;
+
+            if (hs.diemTrungBinh >= 8)
+            {
+                if (diem[0] >= 8 || diem[1] >= 8 || diem[8] >= 8)
+                {
+                    for (int i = 0; i < soMonHoc; i++)
+                    {
+                        if (diem[i] >= 6.5)
+                        {
+                            hs.xepLoai = "Giỏi";
+                        }
+                        else if (diem[i] < 6.5)
+                        {
+                            hs.xepLoai = "Khá";
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    hs.xepLoai = "Khá";
+                }
+            }
+            else if (hs.diemTrungBinh >= 6.5)
+            {
+                if (diem[0] >= 6.5 || diem[1] >= 6.5 || diem[8] >= 6.5)
+                {
+                    for (int i = 0; i < soMonHoc; i++)
+                    {
+                        if (diem[i] >= 5)
+                        {
+                            hs.xepLoai = "Khá";
+                        }
+                        else if (diem[i] < 5)
+                        {
+                            hs.xepLoai = "Trung bình";
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    hs.xepLoai = "Khá";
+                }
+            }
+            else if (hs.diemTrungBinh >= 5)
+            {
+                if (diem[0] >= 5 || diem[1] >= 5 || diem[8] >= 5)
+                {
+                    for (int i = 0; i < soMonHoc; i++)
+                    {
+                        if (diem[i] >= 3.5)
+                        {
+                            hs.xepLoai = "Trung bình";
+                        }
+                        else if (diem[i] < 3.5)
+                        {
+                            hs.xepLoai = "Kém";
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    hs.xepLoai = "Trung bình";
+                }
+            }
+            else
+            {
+                hs.xepLoai = "Kém";
+            }
 
             //hanh kiem: 0: kem, 1: trung binh, 2: kha, 3: tot;
             //Listdiem.count = 13
             //diem[11]: diem the duc
-            //listTenMH = { "Toán học", "Ngữ văn", "Vật lí", "Hóa học", "Sinh học", "Tin học", "Lịch sử", "Địa lí", "Ngoại ngữ", "GDCD", "Công nghệ", "Thể dục", "GDQP" };
+            //listTenMH = { "0-Toán học", "1-Ngữ văn", "Vật lí", "Hóa học", "Sinh học", "Tin học", "Lịch sử", "Địa lí", "8-Ngoại ngữ", "GDCD", "Công nghệ", "Thể dục", "GDQP" };
             return hs;
         }
 
-        diemTongKet TinhDiemTongKetCanam(List<double> diemhk1, int hanhKiemhk1, List<double> diemhk2, int hanhKiemhk2)
+        diemTongKet TinhDiemTongKetCaNam(List<double> diemhk1, int hanhKiemhk1, List<double> diemhk2, int hanhKiemhk2)
         {
             diemTongKet hs = new diemTongKet();
 
@@ -2298,6 +2372,5 @@ namespace StudentManagementSystem
             //listTenMH = { "Toán học", "Ngữ văn", "Vật lí", "Hóa học", "Sinh học", "Tin học", "Lịch sử", "Địa lí", "Ngoại ngữ", "GDCD", "Công nghệ", "Thể dục", "GDQP" };
             return hs;
         }
-
     }
 }
