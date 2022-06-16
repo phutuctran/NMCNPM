@@ -207,7 +207,7 @@ namespace StudentManagementSystem
                 foreach (Lop p in listLop_page1)
                     CB_Lop.Items.Add(p.TenLop);
             }
-            curHK_page1 = CB_NamHoc.SelectedItem.ToString();
+            //curHK_page1 = CB_NamHoc.SelectedItem.ToString();
         }
 
         private void CB_NamHoc_Click(object sender, EventArgs e)
@@ -375,15 +375,8 @@ namespace StudentManagementSystem
                 string _maHK = CB_HocKi.SelectedItem.ToString();
                 string _namHoc = CB_NamHoc.SelectedItem.ToString();
                 listHocSinh_page1[i].DTP = new DiemThanhPhan(_maMon, _tenMH);
-                query = @"SELECT CTD.MADIEMMON, CTD.DIEM, LKT.TENLOAIKT, DM.TRUNGBINH
-                            FROM CHITIETDIEM AS CTD
-                            INNER JOIN DIEMMON AS DM ON CTD.MADIEMMON = DM.MADIEMMON 
-                            LEFT JOIN LOAIKIEMTRA AS LKT ON LKT.MALOAIKT = CTD.MALOAIKT
-                            LEFT JOIN HOCSINH AS HS ON HS.MAHS = DM.MAHOCSINH
-                            LEFT JOIN MONHOC AS MN ON MN.MAMH = DM.MAMONHOC " +
-                $"WHERE DM.MAHOCSINH = '{_maHS}' AND DM.MAHK = '{_maHK}' AND DM.NAMHOC = '{_namHoc}' AND DM.MAMONHOC = '{_maMon}'";
-
-                string maDiemMon;
+                string maDiemMon = "";
+                query = $"SELECT MADIEMMON FROM DIEMMON AS DM WHERE DM.MAHOCSINH = '{_maHS}' AND DM.MAHK = '{_maHK}' AND DM.NAMHOC = '{_namHoc}' AND DM.MAMONHOC = '{_maMon}'";
                 cmd = new SqlCommand(query, GlobalProperties.conn);
 
                 using (SqlDataReader rdr = cmd.ExecuteReader())
@@ -393,15 +386,37 @@ namespace StudentManagementSystem
                         while (rdr.Read())
                         {
                             maDiemMon = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0);
-                            string loaiKT = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2);
-                            double diemtp = rdr.IsDBNull(1) ? -1 : rdr.GetDouble(1);
-                            double diemTB = rdr.IsDBNull(3) ? -1 : rdr.GetDouble(3);
+                            listHocSinh_page1[i].DTP.MaDiemMon = maDiemMon;
+                        }
+                    }
+                }
+
+                query = @"SELECT CTD.DIEM, LKT.TENLOAIKT, DM.TRUNGBINH
+                            FROM CHITIETDIEM AS CTD
+                            INNER JOIN DIEMMON AS DM ON CTD.MADIEMMON = DM.MADIEMMON 
+                            LEFT JOIN LOAIKIEMTRA AS LKT ON LKT.MALOAIKT = CTD.MALOAIKT
+                            LEFT JOIN HOCSINH AS HS ON HS.MAHS = DM.MAHOCSINH
+                            LEFT JOIN MONHOC AS MN ON MN.MAMH = DM.MAMONHOC " +
+                $"WHERE DM.MAHOCSINH = '{_maHS}' AND DM.MAHK = '{_maHK}' AND DM.NAMHOC = '{_namHoc}' AND DM.MAMONHOC = '{_maMon}'";
+
+
+                cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            string loaiKT = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
+                            double diemtp = rdr.IsDBNull(0) ? -1 : rdr.GetDouble(0);
+                            double diemTB = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
                            // MessageBox.Show(_tenMH + " " + maDiemMon + " " + loaiKT + " " + diemtp + " " + diemTB);
                             if (diemtp != -1)
                             {
                                 listHocSinh_page1[i].DTP.MaMH = _maMon;
                                 listHocSinh_page1[i].DTP.HaveTableDiemMon = true;
-                                listHocSinh_page1[i].DTP.MaDiemMon = maDiemMon;
+
                                 if (loaiKT == "DDGTX1")
                                 {
                                     listHocSinh_page1[i].DTP.DDGTX1 = new DTP(diemtp, maDiemMon);
@@ -432,12 +447,6 @@ namespace StudentManagementSystem
                             }
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Chưa có thông tin! Tạo mới tại mục Thiết lập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
                 }
             }
             ShowBangDiem();
@@ -522,6 +531,11 @@ namespace StudentManagementSystem
 
         private void materialRaisedButton2_Click(object sender, EventArgs e) // Lưu điểm hs
         {
+            if (CB_MonHoc.SelectedIndex < 0)
+            {
+                MessageBox.Show("Chưa chọn môn học!", "Thông báo");
+                return;
+            }
             for (int i = 0; i < listHocSinh_page1.Count; i++)
             {
                 for (int j = 3; j <= 9; j++)
@@ -585,25 +599,6 @@ namespace StudentManagementSystem
                 else
                 {
                     string keyMaMonHoc = GlobalProperties.listMaMH[CB_MonHoc.SelectedIndex];
-                    //Tạo table DIEMMON
-                    if (!listHocSinh_page1[i].DTP.HaveTableDiemMon)
-                    {
-                        string keyMaDiemMon = GetMaDiemMonMoi();
-                        if (InsertTableDiemMon(keyMaDiemMon, keyMaMonHoc, curHK_page1, listHocSinh_page1[i].HS.MaHS))
-                        {
-                            listHocSinh_page1[i].DTP.HaveTableDiemMon = true;
-                            listHocSinh_page1[i].DTP.MaDiemMon = keyMaDiemMon;
-                            listHocSinh_page1[i].DTP.MaMH = keyMaMonHoc;
-                        }
-                        else
-                        {
-                            ResetUpdateDiem(i, j);
-                            return;
-                        }
-
-                    }
-                    //MessageBox.Show(listHocSinh_page1[i].DTP.MaDiemMon + " " + maLoaiKT);
-                    //Thêm CHITIETDIEM
                     if (InsertChiTietDiem(listHocSinh_page1[i].DTP.MaDiemMon, maLoaiKT, _diemthuc))
                     {
 
@@ -740,7 +735,9 @@ namespace StudentManagementSystem
         }
 
         void ResetUpdateDiem(int x, int y)
-        { }
+        {
+            MessageBox.Show("err");
+        }
 
         string GetMaLoaiKT(int y)//Mã loại Kiểm tra của cột x
         {
@@ -1544,7 +1541,7 @@ namespace StudentManagementSystem
                 Int32.TryParse(dataGridView_page4_lopmoi.Rows[i].Cells[0].Value.ToString(), out stt);
                 dataGridView_page4_lopmoi.Rows[i].Cells[0].Value = (stt - 1).ToString();
                 listChuyen[stt - 1] = listChuyen[stt];
-                //listChuyen.Remove(stt);
+                listChuyen.Remove(stt);
             }
         }
 
@@ -1650,6 +1647,8 @@ namespace StudentManagementSystem
                 }
                 if (CB_LoaiChuyen.SelectedIndex == 0)
                 {
+                    //Tạo thêm bảng DIEMMON cho HS nào còn thiếu
+                    
                 }
                 else
                 {
@@ -1693,8 +1692,9 @@ namespace StudentManagementSystem
                     //đã có rồi thì thôi, ko thêm nữa 
 
                     //2.tạo 2 bang diem cho 2 hk năm học mới:
-                    TaoTableDiemMon2HK(maNamHoc, _maHS);
+                    //TaoTableDiemMon2HK(maNamHoc, _maHS);
                 }
+                TaoTableDiemMon2HK(maNamHoc, _maHS);
             }
             MessageBox.Show("Đã lưu", "Thông báo!");
             CB_LopCu_p4_SelectedIndexChanged(sender, e);
@@ -2006,13 +2006,34 @@ namespace StudentManagementSystem
             string _gioiTinh = CB_Gioitinh_p6.SelectedItem.ToString();
             string _nienKhoa = CB_NienKhoa_p6.SelectedItem.ToString();
             string _maNamHoc = CB_NamHoc_p6.SelectedItem.ToString();
+            string _sodt = TB_SDT_p6.Text;
 
-            query = $"INSERT INTO HOCSINH(MAHS, MALOP, MATK, HotenHS, ngaysinh, diachi,	gioitinh, nienkhoa)	VALUES('{_maHS}', '{_maLop}', '{_mataikhoan}', N'{_hoTen}', '{_ngaySinh}', N'{_diaChi}', N'{_gioiTinh}', '{_nienKhoa}')";
+            query = $"INSERT INTO HOCSINH(MAHS, MALOP, MATK, HotenHS, ngaysinh, diachi,	gioitinh, nienkhoa, sodt)	VALUES('{_maHS}', '{_maLop}', '{_mataikhoan}', N'{_hoTen}', '{_ngaySinh}', N'{_diaChi}', N'{_gioiTinh}', '{_nienKhoa}', '{_sodt}')";
             cmd = new SqlCommand(query, GlobalProperties.conn);
             rowCount = cmd.ExecuteNonQuery();
 
             TaoTableDiemMon2HK(_maNamHoc, _maHS);
             MessageBox.Show("Đã lưu", "Thông báo!");
+
+            var index = dataGridView_HSThem_p6.Rows.Add();
+            dataGridView_HSThem_p6.Rows[index].Cells[0].Value = _hoTen;
+            dataGridView_HSThem_p6.Rows[index].Cells[1].Value = _ngaySinh;
+            dataGridView_HSThem_p6.Rows[index].Cells[2].Value = _gioiTinh;
+            dataGridView_HSThem_p6.Rows[index].Cells[3].Value = _sodt;
+            dataGridView_HSThem_p6.Rows[index].Cells[4].Value = _diaChi;
+            dataGridView_HSThem_p6.Rows[index].Cells[5].Value = _maHS;
+            dataGridView_HSThem_p6.Rows[index].Cells[6].Value = _mataikhoan;
+            dataGridView_HSThem_p6.Rows[index].Cells[7].Value = TB_matkhau_p6.Text;
+
+
+            CB_Gioitinh_p6.SelectedIndex = -1;
+            TB_MaHS_p6.Text = "";
+            TB_HoTen_p6.Text = "";
+            dateEdit_NgaySinh_p6.Text = "";
+            TB_DiaChi_p6.Text = "";
+            TB_matkhau_p6.Text = "";
+            tb_Username_p6.Text = "";
+
         }
 
         private void CB_NamHoc_p6_Click(object sender, EventArgs e)
@@ -2096,6 +2117,11 @@ namespace StudentManagementSystem
                 }
             }
             return false;
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 
@@ -2194,7 +2220,7 @@ namespace StudentManagementSystem
                 {
                     string maMonHoc = GlobalProperties.listMaMH[j];
                     bool coDiemMon = false;
-                    query = $"SELECT COUNT(*) FROM DIEMMON WHERE MAMONHOC = '{maMonHoc}' AND NAMHOC = '{maNamHoc}' AND MAHK = '{maHK}'";
+                    query = $"SELECT COUNT(*) FROM DIEMMON WHERE MAMONHOC = '{maMonHoc}' AND NAMHOC = '{maNamHoc}' AND MAHK = '{maHK}' AND MAHOCSINH = '{maHS}'";
                     cmd = new SqlCommand(query, GlobalProperties.conn);
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {

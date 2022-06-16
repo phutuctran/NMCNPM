@@ -1,6 +1,7 @@
 ﻿using StudentManagementSystem.DatabaseCore;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,6 +30,9 @@ namespace StudentManagementSystem
                     GlobalProperties.conn = DBUtils.GetDBConnection(severName, databaseName);
                     GlobalProperties.conn.Open();
                     GlobalProperties.isConnectDatabase = true;
+                    string query = "SET DATEFORMAT dmy";
+                    SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+                    int rowCount = cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {

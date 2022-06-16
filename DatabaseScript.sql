@@ -185,6 +185,8 @@ INSERT INTO TAIKHOAN(MATK, USERNAME, PASS)
 		  ('TK0006', 'HS23948733', 'a'),
 		  ('TK0000', 'admin',	   'admin')
 
+		  select * from TAIKHOAN
+
 INSERT INTO KHOI(MAKHOI, TENKHOI)
 	VALUES('K10', N'Khối 10'),
 		  ('K11', N'Khối 11'),
@@ -442,8 +444,3 @@ INNER JOIN HOCSINH AS HS ON HS.MATK = TK.MATK
 WHERE TK.USERNAME = 'HS80901207'
 --Lấy thông tin user theo username của giáo viên;
 
-INSERT INTO NIENKHOA(MANK, NAMBD, NAMKT)
-	VALUES	('NK2019-2022', '2019', '2022'),
-			('NK2020-2023', '2020', '2023'),
-			('NK2021-2024', '2021', '2024'),
-			('NK2022-2025', '2022', '2025')
