@@ -2270,6 +2270,13 @@ namespace StudentManagementSystem
         {
             diemTongKet hs = new diemTongKet();
 
+            double toan = diem[0];
+            double van = diem[1];
+            double anhVan = diem[8];
+            double theDuc = diem[11];
+
+            diem.RemoveAt(11);
+
             //code here;
             int soMonHoc = diem.Count();
             double sum = 0;
@@ -2335,7 +2342,7 @@ namespace StudentManagementSystem
                         }
                         else if (diem[i] < 3.5)
                         {
-                            hs.xepLoai = "Kém";
+                            hs.xepLoai = "Yếu";
                             break;
                         }
                     }
@@ -2347,7 +2354,94 @@ namespace StudentManagementSystem
             }
             else
             {
-                hs.xepLoai = "Kém";
+                hs.xepLoai = "Yếu";
+            }
+
+            if (hs.xepLoai == "Giỏi")
+            {
+                if (theDuc < 5)
+                {
+                    hs.xepLoai = "Khá";
+                }
+            }
+            else if (hs.xepLoai == "Khá")
+            {
+                if (theDuc < 5)
+                {
+                    hs.xepLoai = "Trung bình";
+                }
+            }
+            else if (hs.xepLoai == "Trung bình")
+            {
+                if (theDuc < 5)
+                {
+                    hs.xepLoai = "Yếu";
+                }
+            }
+            else
+            {
+                hs.xepLoai = "Yếu";
+            }
+
+            for (int i = 0; i < soMonHoc; i++)
+            {
+                if (hs.diemTrungBinh >= 8)
+                {
+                    if (diem[i] >= 3.5 && diem[i] < 5)
+                    {
+                        hs.xepLoai = "Khá";
+                    }
+                    else if (diem[i] < 3.5)
+                    {
+                        hs.xepLoai = "Trung bình";
+                    }
+                }
+                else if (hs.diemTrungBinh < 8 && hs.diemTrungBinh >= 6.5)
+                {
+                    if (diem[i] >= 3.5 && diem[i] < 5)
+                    {
+                        hs.xepLoai = "Trung Bình";
+                    }
+                    else if (diem[i] < 3.5)
+                    {
+                        hs.xepLoai = "Yếu";
+                    }
+                }
+            }
+
+            Dictionary<string, int> hocLuc = new Dictionary<string, int>();
+            hocLuc["Giỏi"] = 0;
+            hocLuc["Khá"] = 1;
+            hocLuc["Trung Bình"] = 2;
+            hocLuc["Yếu"] = 3;
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (hs.xepLoai == hocLuc.ElementAt(i).Key)
+                {
+                    int tmp = hocLuc.ElementAt(i).Value;
+                    System.Console.WriteLine(tmp);
+
+                    tmp += _hanhKiem;
+                    System.Console.WriteLine(tmp);
+                    if (tmp == 0)
+                    {
+                        hs.xepLoai = "Giỏi";
+                    }
+                    else if (tmp == 1)
+                    {
+                        hs.xepLoai = "Khá";
+                    }
+                    else if (tmp == 2)
+                    {
+                        hs.xepLoai = "Trung bình";
+                    }
+                    else
+                    {
+                        hs.xepLoai = "Yếu";
+                    }
+                    break;
+                }
             }
 
             //hanh kiem: 0: kem, 1: trung binh, 2: kha, 3: tot;
@@ -2365,6 +2459,8 @@ namespace StudentManagementSystem
             hs.xepLoai = "gioi";
             hs.diemTrungBinh = 9.8;
             hs.hanhKiem = "kém"; //ko sửa
+
+
 
             //hanh kiem: 0: kem, 1: trung binh, 2: kha, 3: tot;
             //Listdiem.count = 13
