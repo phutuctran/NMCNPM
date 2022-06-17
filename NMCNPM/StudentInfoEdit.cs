@@ -297,23 +297,23 @@ namespace StudentManagementSystem
                     else
                     {
                         string keyMaMonHoc = GetMaMonHoc(i);
-                        //Tạo table DIEMMON
-                        if (!diem[i].HaveTableDiemMon)
-                        {
-                            string keyMaDiemMon = GetMaDiemMonMoi();
-                            if (InsertTableDiemMon(keyMaDiemMon, keyMaMonHoc, hocKi, MaHS))
-                            {
-                                diem[i].HaveTableDiemMon = true;
-                                diem[i].MaDiemMon = keyMaDiemMon;
-                                diem[i].MaMH = keyMaMonHoc;
-                            }
-                            else
-                            {
-                                ResetUpdateDiem(i, j);
-                                return;
-                            }
+                        ////Tạo table DIEMMON
+                        //if (!diem[i].HaveTableDiemMon)
+                        //{
+                        //    string keyMaDiemMon = GetMaDiemMonMoi();
+                        //    if (InsertTableDiemMon(keyMaDiemMon, keyMaMonHoc, hocKi, MaHS))
+                        //    {
+                        //        diem[i].HaveTableDiemMon = true;
+                        //        diem[i].MaDiemMon = keyMaDiemMon;
+                        //        diem[i].MaMH = keyMaMonHoc;
+                        //    }
+                        //    else
+                        //    {
+                        //        ResetUpdateDiem(i, j);
+                        //        return;
+                        //    }
                             
-                        }
+                        //}
                         //Thêm CHITIETDIEM
                         if (InsertChiTietDiem(diem[i].MaDiemMon, maLoaiKT, diemthuc))
                         {
@@ -375,6 +375,11 @@ namespace StudentManagementSystem
 
         private void btn_TinhDTB_Click(object sender, EventArgs e)
         {
+            if (dataGridView_Diem.RowCount < 1)
+            {
+                MessageBox.Show("Vui lòng chọn bảng điểm!", "Thông báo");
+                return;
+            }
             int[] heSo = { 1, 1, 1, 1, 2, 3 };
             double TrbHK = 0;
             int soMonHienTai = 0;
@@ -565,13 +570,9 @@ namespace StudentManagementSystem
         {
             diem = new List<DiemThanhPhan>();
             dataGridView_Diem.Rows.Clear();
-            string query = @"SELECT MN.MAMH, MN.TENMH, CTD.MADIEMMON, CTD.DIEM, LKT.TENLOAIKT, DM.TRUNGBINH
-                            FROM CHITIETDIEM AS CTD
-                            INNER JOIN DIEMMON AS DM ON CTD.MADIEMMON = DM.MADIEMMON 
-                            LEFT JOIN LOAIKIEMTRA AS LKT ON LKT.MALOAIKT = CTD.MALOAIKT
-                            LEFT JOIN HOCSINH AS HS ON HS.MAHS = DM.MAHOCSINH
-                            LEFT JOIN MONHOC AS MN ON MN.MAMH = DM.MAMONHOC " +
-                $"WHERE DM.MAHOCSINH = '{MaHS}' AND DM.MAHK = '{HK}' AND DM.NAMHOC = '{NamHoc}'";
+            string query = @"SELECT DM.MAMONHOC, CTD.MADIEMMON, CTD.DIEM, CTD.MALOAIKT
+                            FROM CHITIETDIEM AS CTD, DIEMMON AS DM " + 
+                $"WHERE DM.MAHOCSINH = '{MaHS}' AND DM.MAHK = '{HK}' AND DM.NAMHOC = '{NamHoc}' AND DM.MADIEMMON = CTD.MADIEMMON";
 
             for (int i = 0; i < 13; i++)
             {
@@ -580,7 +581,7 @@ namespace StudentManagementSystem
             string maDiemMon;
             SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
             string maMH;
-            string tenMH = "";
+            //string tenMH = "";
             using (SqlDataReader rdr = cmd.ExecuteReader())
             {
                 if (rdr.HasRows)
@@ -588,62 +589,80 @@ namespace StudentManagementSystem
                     while (rdr.Read())
                     {
                         maMH = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
-                        tenMH = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
-                        maDiemMon = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2);
-                        string loaiKT = rdr.IsDBNull(4) ? GlobalProperties.NULLFIELD : rdr.GetString(4);
-                        double diemtp = rdr.IsDBNull(3) ? -1 : rdr.GetDouble(3);
-                        double diemTB = rdr.IsDBNull(5) ? -1 : rdr.GetDouble(5);
-                        int f = -1;
+                        //tenMH = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
+                        maDiemMon = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
+                        string loaiKT = rdr.IsDBNull(3) ? GlobalProperties.NULLFIELD : rdr.GetString(3);
+                        double diemtp = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
+                        loaiKT = loaiKT.Trim();
 
                         if (diemtp != -1)
                         {
                             for (int i = 0; i < 13; i++)
                             {
+                                
                                 if (maMH == GlobalProperties.listMaMH[i])
                                 {
-                                    f = i;
+                                   
+                                    if (loaiKT == "DTX1")
+                                    {
+                                        diem[i].DDGTX1 = new DTP(diemtp, maDiemMon);
+                                    }
+                                    else if (loaiKT == "DTX2")
+                                    {
+                                        diem[i].DDGTX2 = new DTP(diemtp, maDiemMon);
+                                    }
+                                    else if (loaiKT == "DTX3")
+                                    {
+                                        diem[i].DDGTX3 = new DTP(diemtp, maDiemMon);
+                                    }
+                                    else if (loaiKT == "DTX4")
+                                    {
+                                        diem[i].DDGTX4 = new DTP(diemtp, maDiemMon);
+                                    }
+                                    else if (loaiKT == "DGK")
+                                    {
+                                        diem[i].DDGGK = new DTP(diemtp, maDiemMon);
+                                    }
+                                    else if (loaiKT == "DCK")
+                                    {
+                                        diem[i].DDGCK = new DTP(diemtp, maDiemMon);
+                                    }
                                     break;
                                 }
                             }
-
-                            if (f != -1)
-                            {
-                                diem[f].MaMH = maMH;
-                                diem[f].HaveTableDiemMon = true;
-                                diem[f].MaDiemMon = maDiemMon;
-                                if (loaiKT == "DDGTX1")
-                                {
-                                    diem[f].DDGTX1 = new DTP(diemtp, maDiemMon);
-                                }
-                                else if (loaiKT == "DDGTX2")
-                                {
-                                    diem[f].DDGTX2 = new DTP(diemtp, maDiemMon);
-                                }
-                                else if (loaiKT == "DDGTX3")
-                                {
-                                    diem[f].DDGTX3 = new DTP(diemtp, maDiemMon);
-                                }
-                                else if (loaiKT == "DDGTX4")
-                                {
-                                    diem[f].DDGTX4 = new DTP(diemtp, maDiemMon);
-                                }
-                                else if (loaiKT == "DDGGK")
-                                {
-                                    diem[f].DDGGK = new DTP(diemtp, maDiemMon);
-                                }
-                                else if (loaiKT == "DDGCK")
-                                {
-                                    diem[f].DDGCK = new DTP(diemtp, maDiemMon);
-                                }
-
-                                diem[f].DDGTRB = new DTP(diemTB, maDiemMon);
-                            }
-
                         }
                     }
                 }
-                ShowDataPage2();
+
             }
+            query = $"SELECT DM.MADIEMMON, DM.MAMONHOC, DM.TRUNGBINH FROM DIEMMON AS DM WHERE DM.MAHOCSINH = '{MaHS}' AND DM.MAHK = '{HK}' AND DM.NAMHOC = '{NamHoc}'";
+            cmd = new SqlCommand(query, GlobalProperties.conn);
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        string maDM = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        maMH = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                        double diemtp = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
+
+                        for (int i = 0; i < 13; i++)
+                        {
+                            if (maMH == GlobalProperties.listMaMH[i])
+                            {
+                                diem[i].MaDiemMon = maDM;
+                                diem[i].MaMH = maMH;
+                                diem[i].HaveTableDiemMon = true;
+                                diem[i].DDGTRB = new DTP(diemtp, maDM);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            ShowDataPage2();
         }
 
         void ResetUpdateDiem(int i, int j)
@@ -787,6 +806,7 @@ namespace StudentManagementSystem
             dataGridView_Diem.Rows.Clear();
             for (int i = 0; i < soMon; i++)
             {
+                //MessageBox.Show(diem[i].MaDiemMon);
                 DataGridViewRow row = (DataGridViewRow)dataGridView_Diem.Rows[0].Clone();
 
                 row.Cells[0].Value = (++stt).ToString();//Số thứ tự

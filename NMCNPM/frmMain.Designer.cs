@@ -29,31 +29,35 @@ namespace StudentManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges41 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges42 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges43 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges44 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges45 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges46 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges47 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges48 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties101 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties102 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties103 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties104 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties105 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties106 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties107 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties108 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties109 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties110 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties111 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties112 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties113 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties114 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties115 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties116 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties117 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties118 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties119 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties120 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuIconButton8 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
@@ -140,23 +144,11 @@ namespace StudentManagementSystem
             this.tabtongketdiem = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridView_Tongket = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trbhk1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hanhkiemhk1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.hocluchk1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trbhk2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hanhkiemhk2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.hocluchk2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trbCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hanhkiemCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoclucCn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btn_tinhtongket_p3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lb_siso_p3 = new System.Windows.Forms.Label();
             this.lb_tenlop_p3 = new System.Windows.Forms.Label();
             this.lb_tengvcn_p3 = new System.Windows.Forms.Label();
@@ -255,6 +247,7 @@ namespace StudentManagementSystem
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.Check_sdt = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.CB_NienKhoa_p6 = new System.Windows.Forms.ComboBox();
             this.label55 = new System.Windows.Forms.Label();
             this.btn_random_mahs_mk = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -287,8 +280,33 @@ namespace StudentManagementSystem
             this.CB_NamHoc_p6 = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Check_sdt = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.tab_caidat_tab8 = new System.Windows.Forms.TabPage();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.btn_Hienthi_p8 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dataGridView_taikhoan_p8 = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trbhk1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanhkiemhk1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.hocluchk1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trbhk2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanhkiemhk2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.hocluchk2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trbCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanhkiemCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoclucCn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_Menu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabMain.SuspendLayout();
@@ -328,6 +346,9 @@ namespace StudentManagementSystem
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_NgaySinh_p6.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_NgaySinh_p6.Properties)).BeginInit();
+            this.tab_caidat_tab8.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_taikhoan_p8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Menu
@@ -392,11 +413,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton8.ColorContrastOnClick = 30;
             this.bunifuIconButton8.ColorContrastOnHover = 30;
             this.bunifuIconButton8.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuIconButton8.CustomizableEdges = borderEdges1;
+            borderEdges41.BottomLeft = true;
+            borderEdges41.BottomRight = true;
+            borderEdges41.TopLeft = true;
+            borderEdges41.TopRight = true;
+            this.bunifuIconButton8.CustomizableEdges = borderEdges41;
             this.bunifuIconButton8.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton8.Image = global::StudentManagementSystem.Properties.Resources.settings;
             this.bunifuIconButton8.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -458,11 +479,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton2.ColorContrastOnClick = 30;
             this.bunifuIconButton2.ColorContrastOnHover = 30;
             this.bunifuIconButton2.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuIconButton2.CustomizableEdges = borderEdges2;
+            borderEdges42.BottomLeft = true;
+            borderEdges42.BottomRight = true;
+            borderEdges42.TopLeft = true;
+            borderEdges42.TopRight = true;
+            this.bunifuIconButton2.CustomizableEdges = borderEdges42;
             this.bunifuIconButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton2.Image = global::StudentManagementSystem.Properties.Resources.personal;
             this.bunifuIconButton2.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -507,11 +528,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton3.ColorContrastOnClick = 30;
             this.bunifuIconButton3.ColorContrastOnHover = 30;
             this.bunifuIconButton3.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.bunifuIconButton3.CustomizableEdges = borderEdges3;
+            borderEdges43.BottomLeft = true;
+            borderEdges43.BottomRight = true;
+            borderEdges43.TopLeft = true;
+            borderEdges43.TopRight = true;
+            this.bunifuIconButton3.CustomizableEdges = borderEdges43;
             this.bunifuIconButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton3.Image = global::StudentManagementSystem.Properties.Resources.summary;
             this.bunifuIconButton3.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -556,11 +577,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton4.ColorContrastOnClick = 30;
             this.bunifuIconButton4.ColorContrastOnHover = 30;
             this.bunifuIconButton4.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.bunifuIconButton4.CustomizableEdges = borderEdges4;
+            borderEdges44.BottomLeft = true;
+            borderEdges44.BottomRight = true;
+            borderEdges44.TopLeft = true;
+            borderEdges44.TopRight = true;
+            this.bunifuIconButton4.CustomizableEdges = borderEdges44;
             this.bunifuIconButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton4.Image = global::StudentManagementSystem.Properties.Resources.exchange;
             this.bunifuIconButton4.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -588,11 +609,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton5.ColorContrastOnClick = 30;
             this.bunifuIconButton5.ColorContrastOnHover = 30;
             this.bunifuIconButton5.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.bunifuIconButton5.CustomizableEdges = borderEdges5;
+            borderEdges45.BottomLeft = true;
+            borderEdges45.BottomRight = true;
+            borderEdges45.TopLeft = true;
+            borderEdges45.TopRight = true;
+            this.bunifuIconButton5.CustomizableEdges = borderEdges45;
             this.bunifuIconButton5.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton5.Image = global::StudentManagementSystem.Properties.Resources.addstu;
             this.bunifuIconButton5.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -637,11 +658,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton6.ColorContrastOnClick = 30;
             this.bunifuIconButton6.ColorContrastOnHover = 30;
             this.bunifuIconButton6.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.bunifuIconButton6.CustomizableEdges = borderEdges6;
+            borderEdges46.BottomLeft = true;
+            borderEdges46.BottomRight = true;
+            borderEdges46.TopLeft = true;
+            borderEdges46.TopRight = true;
+            this.bunifuIconButton6.CustomizableEdges = borderEdges46;
             this.bunifuIconButton6.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton6.Image = global::StudentManagementSystem.Properties.Resources.addNHLop;
             this.bunifuIconButton6.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -686,11 +707,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton1.ColorContrastOnClick = 30;
             this.bunifuIconButton1.ColorContrastOnHover = 30;
             this.bunifuIconButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.bunifuIconButton1.CustomizableEdges = borderEdges7;
+            borderEdges47.BottomLeft = true;
+            borderEdges47.BottomRight = true;
+            borderEdges47.TopLeft = true;
+            borderEdges47.TopRight = true;
+            this.bunifuIconButton1.CustomizableEdges = borderEdges47;
             this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton1.Image = global::StudentManagementSystem.Properties.Resources.transcript;
             this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -718,11 +739,11 @@ namespace StudentManagementSystem
             this.bunifuIconButton7.ColorContrastOnClick = 30;
             this.bunifuIconButton7.ColorContrastOnHover = 30;
             this.bunifuIconButton7.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.bunifuIconButton7.CustomizableEdges = borderEdges8;
+            borderEdges48.BottomLeft = true;
+            borderEdges48.BottomRight = true;
+            borderEdges48.TopLeft = true;
+            borderEdges48.TopRight = true;
+            this.bunifuIconButton7.CustomizableEdges = borderEdges48;
             this.bunifuIconButton7.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton7.Image = global::StudentManagementSystem.Properties.Resources.add_teacher;
             this.bunifuIconButton7.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -815,7 +836,7 @@ namespace StudentManagementSystem
             this.tabMain.Controls.Add(this.themNK_LH);
             this.tabMain.Controls.Add(this.Tabthemhs);
             this.tabMain.Controls.Add(this.tabPage1);
-            this.tabMain.Controls.Add(this.tabPage2);
+            this.tabMain.Controls.Add(this.tab_caidat_tab8);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(75, 0);
             this.tabMain.Name = "tabMain";
@@ -1072,26 +1093,26 @@ namespace StudentManagementSystem
             this.TB_search_page1.Modified = false;
             this.TB_search_page1.Multiline = false;
             this.TB_search_page1.Name = "TB_search_page1";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page1.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.TB_search_page1.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page1.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page1.OnIdleState = stateProperties4;
+            stateProperties101.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties101.FillColor = System.Drawing.Color.Empty;
+            stateProperties101.ForeColor = System.Drawing.Color.Empty;
+            stateProperties101.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page1.OnActiveState = stateProperties101;
+            stateProperties102.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties102.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties102.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties102.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.TB_search_page1.OnDisabledState = stateProperties102;
+            stateProperties103.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties103.FillColor = System.Drawing.Color.Empty;
+            stateProperties103.ForeColor = System.Drawing.Color.Empty;
+            stateProperties103.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page1.OnHoverState = stateProperties103;
+            stateProperties104.BorderColor = System.Drawing.Color.Silver;
+            stateProperties104.FillColor = System.Drawing.Color.White;
+            stateProperties104.ForeColor = System.Drawing.Color.Empty;
+            stateProperties104.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page1.OnIdleState = stateProperties104;
             this.TB_search_page1.Padding = new System.Windows.Forms.Padding(3);
             this.TB_search_page1.PasswordChar = '\0';
             this.TB_search_page1.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -1580,26 +1601,26 @@ namespace StudentManagementSystem
             this.TB_Search_page2.Modified = false;
             this.TB_Search_page2.Multiline = false;
             this.TB_Search_page2.Name = "TB_Search_page2";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_Search_page2.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.TB_Search_page2.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_Search_page2.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_Search_page2.OnIdleState = stateProperties8;
+            stateProperties105.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties105.FillColor = System.Drawing.Color.Empty;
+            stateProperties105.ForeColor = System.Drawing.Color.Empty;
+            stateProperties105.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_Search_page2.OnActiveState = stateProperties105;
+            stateProperties106.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties106.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties106.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties106.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.TB_Search_page2.OnDisabledState = stateProperties106;
+            stateProperties107.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties107.FillColor = System.Drawing.Color.Empty;
+            stateProperties107.ForeColor = System.Drawing.Color.Empty;
+            stateProperties107.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_Search_page2.OnHoverState = stateProperties107;
+            stateProperties108.BorderColor = System.Drawing.Color.Silver;
+            stateProperties108.FillColor = System.Drawing.Color.White;
+            stateProperties108.ForeColor = System.Drawing.Color.Empty;
+            stateProperties108.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_Search_page2.OnIdleState = stateProperties108;
             this.TB_Search_page2.Padding = new System.Windows.Forms.Padding(3);
             this.TB_Search_page2.PasswordChar = '\0';
             this.TB_Search_page2.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -1705,106 +1726,13 @@ namespace StudentManagementSystem
             this.dataGridView_Tongket.Size = new System.Drawing.Size(1044, 578);
             this.dataGridView_Tongket.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Số TT";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mã HS";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tên học sinh";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 140;
-            // 
-            // trbhk1
-            // 
-            this.trbhk1.HeaderText = "TrbHK1";
-            this.trbhk1.Name = "trbhk1";
-            this.trbhk1.ReadOnly = true;
-            this.trbhk1.Width = 60;
-            // 
-            // hanhkiemhk1
-            // 
-            this.hanhkiemhk1.HeaderText = "Hạnh kiểm HK1";
-            this.hanhkiemhk1.Items.AddRange(new object[] {
-            "Tốt",
-            "Khá",
-            "Trung bình",
-            "Yếu"});
-            this.hanhkiemhk1.Name = "hanhkiemhk1";
-            this.hanhkiemhk1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.hanhkiemhk1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // hocluchk1
-            // 
-            this.hocluchk1.HeaderText = "Học lực HK1";
-            this.hocluchk1.Name = "hocluchk1";
-            this.hocluchk1.ReadOnly = true;
-            this.hocluchk1.Width = 80;
-            // 
-            // trbhk2
-            // 
-            this.trbhk2.HeaderText = "TrbHK2";
-            this.trbhk2.Name = "trbhk2";
-            this.trbhk2.ReadOnly = true;
-            this.trbhk2.Width = 60;
-            // 
-            // hanhkiemhk2
-            // 
-            this.hanhkiemhk2.HeaderText = "Hạnh kiểm HK2";
-            this.hanhkiemhk2.Items.AddRange(new object[] {
-            "Tốt",
-            "Khá",
-            "Trung bình",
-            "Yếu"});
-            this.hanhkiemhk2.Name = "hanhkiemhk2";
-            this.hanhkiemhk2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.hanhkiemhk2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // hocluchk2
-            // 
-            this.hocluchk2.HeaderText = "Học Lực HK2";
-            this.hocluchk2.Name = "hocluchk2";
-            this.hocluchk2.ReadOnly = true;
-            this.hocluchk2.Width = 80;
-            // 
-            // trbCN
-            // 
-            this.trbCN.HeaderText = "TrbCN";
-            this.trbCN.Name = "trbCN";
-            this.trbCN.ReadOnly = true;
-            this.trbCN.Width = 60;
-            // 
-            // hanhkiemCN
-            // 
-            this.hanhkiemCN.HeaderText = "Hạnh kiểm CN";
-            this.hanhkiemCN.Name = "hanhkiemCN";
-            this.hanhkiemCN.ReadOnly = true;
-            // 
-            // hoclucCn
-            // 
-            this.hoclucCn.HeaderText = "Học lực CN";
-            this.hoclucCn.Name = "hoclucCn";
-            this.hoclucCn.ReadOnly = true;
-            this.hoclucCn.Width = 80;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Azure;
             this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Controls.Add(this.materialRaisedButton1);
             this.panel6.Controls.Add(this.materialRaisedButton3);
-            this.panel6.Controls.Add(this.materialRaisedButton4);
+            this.panel6.Controls.Add(this.btn_tinhtongket_p3);
             this.panel6.Controls.Add(this.lb_siso_p3);
             this.panel6.Controls.Add(this.lb_tenlop_p3);
             this.panel6.Controls.Add(this.lb_tengvcn_p3);
@@ -1839,6 +1767,7 @@ namespace StudentManagementSystem
             this.materialRaisedButton1.TabIndex = 21;
             this.materialRaisedButton1.Text = "Hoàn tác";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // materialRaisedButton3
             // 
@@ -1854,21 +1783,23 @@ namespace StudentManagementSystem
             this.materialRaisedButton3.TabIndex = 20;
             this.materialRaisedButton3.Text = "Lưu";
             this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
             // 
-            // materialRaisedButton4
+            // btn_tinhtongket_p3
             // 
-            this.materialRaisedButton4.AutoSize = true;
-            this.materialRaisedButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton4.Depth = 0;
-            this.materialRaisedButton4.Icon = null;
-            this.materialRaisedButton4.Location = new System.Drawing.Point(22, 537);
-            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton4.Name = "materialRaisedButton4";
-            this.materialRaisedButton4.Primary = true;
-            this.materialRaisedButton4.Size = new System.Drawing.Size(82, 36);
-            this.materialRaisedButton4.TabIndex = 19;
-            this.materialRaisedButton4.Text = "Tính ĐTB";
-            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.btn_tinhtongket_p3.AutoSize = true;
+            this.btn_tinhtongket_p3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_tinhtongket_p3.Depth = 0;
+            this.btn_tinhtongket_p3.Icon = null;
+            this.btn_tinhtongket_p3.Location = new System.Drawing.Point(22, 537);
+            this.btn_tinhtongket_p3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_tinhtongket_p3.Name = "btn_tinhtongket_p3";
+            this.btn_tinhtongket_p3.Primary = true;
+            this.btn_tinhtongket_p3.Size = new System.Drawing.Size(82, 36);
+            this.btn_tinhtongket_p3.TabIndex = 19;
+            this.btn_tinhtongket_p3.Text = "Tính ĐTB";
+            this.btn_tinhtongket_p3.UseVisualStyleBackColor = true;
+            this.btn_tinhtongket_p3.Click += new System.EventHandler(this.btn_tinhtongket_p3_Click);
             // 
             // lb_siso_p3
             // 
@@ -2028,26 +1959,26 @@ namespace StudentManagementSystem
             this.TB_search_page3.Modified = false;
             this.TB_search_page3.Multiline = false;
             this.TB_search_page3.Name = "TB_search_page3";
-            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page3.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.TB_search_page3.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page3.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.White;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page3.OnIdleState = stateProperties12;
+            stateProperties109.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties109.FillColor = System.Drawing.Color.Empty;
+            stateProperties109.ForeColor = System.Drawing.Color.Empty;
+            stateProperties109.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page3.OnActiveState = stateProperties109;
+            stateProperties110.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties110.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties110.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties110.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.TB_search_page3.OnDisabledState = stateProperties110;
+            stateProperties111.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties111.FillColor = System.Drawing.Color.Empty;
+            stateProperties111.ForeColor = System.Drawing.Color.Empty;
+            stateProperties111.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page3.OnHoverState = stateProperties111;
+            stateProperties112.BorderColor = System.Drawing.Color.Silver;
+            stateProperties112.FillColor = System.Drawing.Color.White;
+            stateProperties112.ForeColor = System.Drawing.Color.Empty;
+            stateProperties112.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page3.OnIdleState = stateProperties112;
             this.TB_search_page3.Padding = new System.Windows.Forms.Padding(3);
             this.TB_search_page3.PasswordChar = '\0';
             this.TB_search_page3.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -2518,26 +2449,26 @@ namespace StudentManagementSystem
             this.TB_search_page4.Modified = false;
             this.TB_search_page4.Multiline = false;
             this.TB_search_page4.Name = "TB_search_page4";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page4.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.TB_search_page4.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page4.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TB_search_page4.OnIdleState = stateProperties16;
+            stateProperties113.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties113.FillColor = System.Drawing.Color.Empty;
+            stateProperties113.ForeColor = System.Drawing.Color.Empty;
+            stateProperties113.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page4.OnActiveState = stateProperties113;
+            stateProperties114.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties114.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties114.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties114.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.TB_search_page4.OnDisabledState = stateProperties114;
+            stateProperties115.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties115.FillColor = System.Drawing.Color.Empty;
+            stateProperties115.ForeColor = System.Drawing.Color.Empty;
+            stateProperties115.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page4.OnHoverState = stateProperties115;
+            stateProperties116.BorderColor = System.Drawing.Color.Silver;
+            stateProperties116.FillColor = System.Drawing.Color.White;
+            stateProperties116.ForeColor = System.Drawing.Color.Empty;
+            stateProperties116.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TB_search_page4.OnIdleState = stateProperties116;
             this.TB_search_page4.Padding = new System.Windows.Forms.Padding(3);
             this.TB_search_page4.PasswordChar = '\0';
             this.TB_search_page4.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -3105,6 +3036,60 @@ namespace StudentManagementSystem
             this.panel14.Size = new System.Drawing.Size(374, 653);
             this.panel14.TabIndex = 0;
             // 
+            // Check_sdt
+            // 
+            this.Check_sdt.AllowBindingControlAnimation = true;
+            this.Check_sdt.AllowBindingControlColorChanges = false;
+            this.Check_sdt.AllowBindingControlLocation = true;
+            this.Check_sdt.AllowCheckBoxAnimation = false;
+            this.Check_sdt.AllowCheckmarkAnimation = true;
+            this.Check_sdt.AllowOnHoverStates = true;
+            this.Check_sdt.AutoCheck = false;
+            this.Check_sdt.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.Check_sdt.BackColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Check_sdt.BackgroundImage")));
+            this.Check_sdt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Check_sdt.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.Check_sdt.BorderRadius = 12;
+            this.Check_sdt.Checked = false;
+            this.Check_sdt.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.Check_sdt.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Check_sdt.CustomCheckmarkImage = null;
+            this.Check_sdt.Location = new System.Drawing.Point(347, 179);
+            this.Check_sdt.MinimumSize = new System.Drawing.Size(17, 17);
+            this.Check_sdt.Name = "Check_sdt";
+            this.Check_sdt.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.Check_sdt.OnCheck.BorderRadius = 12;
+            this.Check_sdt.OnCheck.BorderThickness = 2;
+            this.Check_sdt.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.Check_sdt.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.Check_sdt.OnCheck.CheckmarkThickness = 2;
+            this.Check_sdt.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.Check_sdt.OnDisable.BorderRadius = 12;
+            this.Check_sdt.OnDisable.BorderThickness = 2;
+            this.Check_sdt.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.Check_sdt.OnDisable.CheckmarkThickness = 2;
+            this.Check_sdt.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.Check_sdt.OnHoverChecked.BorderRadius = 12;
+            this.Check_sdt.OnHoverChecked.BorderThickness = 2;
+            this.Check_sdt.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.Check_sdt.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.Check_sdt.OnHoverChecked.CheckmarkThickness = 2;
+            this.Check_sdt.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.Check_sdt.OnHoverUnchecked.BorderRadius = 12;
+            this.Check_sdt.OnHoverUnchecked.BorderThickness = 1;
+            this.Check_sdt.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.Check_sdt.OnUncheck.BorderRadius = 12;
+            this.Check_sdt.OnUncheck.BorderThickness = 1;
+            this.Check_sdt.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.Check_sdt.Size = new System.Drawing.Size(21, 21);
+            this.Check_sdt.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.Check_sdt.TabIndex = 48;
+            this.Check_sdt.ThreeState = false;
+            this.Check_sdt.ToolTipText = null;
+            // 
             // CB_NienKhoa_p6
             // 
             this.CB_NienKhoa_p6.FormattingEnabled = true;
@@ -3525,69 +3510,327 @@ namespace StudentManagementSystem
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tab_caidat_tab8
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1336, 659);
-            this.tabPage2.TabIndex = 7;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tab_caidat_tab8.Controls.Add(this.panel16);
+            this.tab_caidat_tab8.Location = new System.Drawing.Point(4, 22);
+            this.tab_caidat_tab8.Name = "tab_caidat_tab8";
+            this.tab_caidat_tab8.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_caidat_tab8.Size = new System.Drawing.Size(1336, 659);
+            this.tab_caidat_tab8.TabIndex = 7;
+            this.tab_caidat_tab8.Text = "cai dat";
+            this.tab_caidat_tab8.UseVisualStyleBackColor = true;
             // 
-            // Check_sdt
+            // panel16
             // 
-            this.Check_sdt.AllowBindingControlAnimation = true;
-            this.Check_sdt.AllowBindingControlColorChanges = false;
-            this.Check_sdt.AllowBindingControlLocation = true;
-            this.Check_sdt.AllowCheckBoxAnimation = false;
-            this.Check_sdt.AllowCheckmarkAnimation = true;
-            this.Check_sdt.AllowOnHoverStates = true;
-            this.Check_sdt.AutoCheck = false;
-            this.Check_sdt.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.Check_sdt.BackColor = System.Drawing.Color.Transparent;
-            this.Check_sdt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Check_sdt.BackgroundImage")));
-            this.Check_sdt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Check_sdt.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.Check_sdt.BorderRadius = 12;
-            this.Check_sdt.Checked = false;
-            this.Check_sdt.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.Check_sdt.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Check_sdt.CustomCheckmarkImage = null;
-            this.Check_sdt.Location = new System.Drawing.Point(347, 179);
-            this.Check_sdt.MinimumSize = new System.Drawing.Size(17, 17);
-            this.Check_sdt.Name = "Check_sdt";
-            this.Check_sdt.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.Check_sdt.OnCheck.BorderRadius = 12;
-            this.Check_sdt.OnCheck.BorderThickness = 2;
-            this.Check_sdt.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
-            this.Check_sdt.OnCheck.CheckmarkColor = System.Drawing.Color.White;
-            this.Check_sdt.OnCheck.CheckmarkThickness = 2;
-            this.Check_sdt.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.Check_sdt.OnDisable.BorderRadius = 12;
-            this.Check_sdt.OnDisable.BorderThickness = 2;
-            this.Check_sdt.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.Check_sdt.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
-            this.Check_sdt.OnDisable.CheckmarkThickness = 2;
-            this.Check_sdt.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.Check_sdt.OnHoverChecked.BorderRadius = 12;
-            this.Check_sdt.OnHoverChecked.BorderThickness = 2;
-            this.Check_sdt.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.Check_sdt.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
-            this.Check_sdt.OnHoverChecked.CheckmarkThickness = 2;
-            this.Check_sdt.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.Check_sdt.OnHoverUnchecked.BorderRadius = 12;
-            this.Check_sdt.OnHoverUnchecked.BorderThickness = 1;
-            this.Check_sdt.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.Check_sdt.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
-            this.Check_sdt.OnUncheck.BorderRadius = 12;
-            this.Check_sdt.OnUncheck.BorderThickness = 1;
-            this.Check_sdt.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.Check_sdt.Size = new System.Drawing.Size(21, 21);
-            this.Check_sdt.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.Check_sdt.TabIndex = 48;
-            this.Check_sdt.ThreeState = false;
-            this.Check_sdt.ToolTipText = null;
+            this.panel16.BackColor = System.Drawing.Color.LightCyan;
+            this.panel16.Controls.Add(this.btn_Hienthi_p8);
+            this.panel16.Controls.Add(this.materialRaisedButton5);
+            this.panel16.Controls.Add(this.materialRaisedButton6);
+            this.panel16.Controls.Add(this.label21);
+            this.panel16.Controls.Add(this.bunifuTextBox1);
+            this.panel16.Controls.Add(this.label20);
+            this.panel16.Controls.Add(this.dataGridView_taikhoan_p8);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel16.Location = new System.Drawing.Point(3, 3);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(645, 653);
+            this.panel16.TabIndex = 0;
+            // 
+            // btn_Hienthi_p8
+            // 
+            this.btn_Hienthi_p8.AutoSize = true;
+            this.btn_Hienthi_p8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Hienthi_p8.Depth = 0;
+            this.btn_Hienthi_p8.Icon = null;
+            this.btn_Hienthi_p8.Location = new System.Drawing.Point(272, 44);
+            this.btn_Hienthi_p8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_Hienthi_p8.Name = "btn_Hienthi_p8";
+            this.btn_Hienthi_p8.Primary = true;
+            this.btn_Hienthi_p8.Size = new System.Drawing.Size(77, 36);
+            this.btn_Hienthi_p8.TabIndex = 33;
+            this.btn_Hienthi_p8.Text = "HIển thị";
+            this.btn_Hienthi_p8.UseVisualStyleBackColor = true;
+            this.btn_Hienthi_p8.Click += new System.EventHandler(this.btn_Hienthi_p8_Click);
+            // 
+            // materialRaisedButton5
+            // 
+            this.materialRaisedButton5.AutoSize = true;
+            this.materialRaisedButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton5.Depth = 0;
+            this.materialRaisedButton5.Icon = null;
+            this.materialRaisedButton5.Location = new System.Drawing.Point(443, 603);
+            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton5.Name = "materialRaisedButton5";
+            this.materialRaisedButton5.Primary = true;
+            this.materialRaisedButton5.Size = new System.Drawing.Size(89, 36);
+            this.materialRaisedButton5.TabIndex = 32;
+            this.materialRaisedButton5.Text = "Hoàn tác";
+            this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.materialRaisedButton5_Click_1);
+            // 
+            // materialRaisedButton6
+            // 
+            this.materialRaisedButton6.AutoSize = true;
+            this.materialRaisedButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton6.Depth = 0;
+            this.materialRaisedButton6.Icon = null;
+            this.materialRaisedButton6.Location = new System.Drawing.Point(558, 603);
+            this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton6.Name = "materialRaisedButton6";
+            this.materialRaisedButton6.Primary = true;
+            this.materialRaisedButton6.Size = new System.Drawing.Size(47, 36);
+            this.materialRaisedButton6.TabIndex = 31;
+            this.materialRaisedButton6.Text = "Lưu";
+            this.materialRaisedButton6.UseVisualStyleBackColor = true;
+            this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.DimGray;
+            this.label21.Location = new System.Drawing.Point(410, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(79, 20);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Tìm kiếm:";
+            // 
+            // bunifuTextBox1
+            // 
+            this.bunifuTextBox1.AcceptsReturn = false;
+            this.bunifuTextBox1.AcceptsTab = false;
+            this.bunifuTextBox1.AnimationSpeed = 200;
+            this.bunifuTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.bunifuTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.bunifuTextBox1.AutoSizeHeight = true;
+            this.bunifuTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTextBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox1.BackgroundImage")));
+            this.bunifuTextBox1.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.bunifuTextBox1.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuTextBox1.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuTextBox1.BorderColorIdle = System.Drawing.Color.Silver;
+            this.bunifuTextBox1.BorderRadius = 1;
+            this.bunifuTextBox1.BorderThickness = 1;
+            this.bunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.bunifuTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.bunifuTextBox1.DefaultText = "";
+            this.bunifuTextBox1.FillColor = System.Drawing.Color.White;
+            this.bunifuTextBox1.HideSelection = true;
+            this.bunifuTextBox1.IconLeft = null;
+            this.bunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox1.IconPadding = 10;
+            this.bunifuTextBox1.IconRight = null;
+            this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTextBox1.Lines = new string[0];
+            this.bunifuTextBox1.Location = new System.Drawing.Point(414, 33);
+            this.bunifuTextBox1.MaxLength = 32767;
+            this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.bunifuTextBox1.Modified = false;
+            this.bunifuTextBox1.Multiline = false;
+            this.bunifuTextBox1.Name = "bunifuTextBox1";
+            stateProperties117.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties117.FillColor = System.Drawing.Color.Empty;
+            stateProperties117.ForeColor = System.Drawing.Color.Empty;
+            stateProperties117.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnActiveState = stateProperties117;
+            stateProperties118.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties118.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties118.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties118.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.bunifuTextBox1.OnDisabledState = stateProperties118;
+            stateProperties119.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties119.FillColor = System.Drawing.Color.Empty;
+            stateProperties119.ForeColor = System.Drawing.Color.Empty;
+            stateProperties119.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnHoverState = stateProperties119;
+            stateProperties120.BorderColor = System.Drawing.Color.Silver;
+            stateProperties120.FillColor = System.Drawing.Color.White;
+            stateProperties120.ForeColor = System.Drawing.Color.Empty;
+            stateProperties120.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnIdleState = stateProperties120;
+            this.bunifuTextBox1.Padding = new System.Windows.Forms.Padding(3);
+            this.bunifuTextBox1.PasswordChar = '\0';
+            this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.bunifuTextBox1.PlaceholderText = "Enter text";
+            this.bunifuTextBox1.ReadOnly = false;
+            this.bunifuTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.bunifuTextBox1.SelectedText = "";
+            this.bunifuTextBox1.SelectionLength = 0;
+            this.bunifuTextBox1.SelectionStart = 0;
+            this.bunifuTextBox1.ShortcutsEnabled = true;
+            this.bunifuTextBox1.Size = new System.Drawing.Size(213, 39);
+            this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.bunifuTextBox1.TabIndex = 29;
+            this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuTextBox1.TextMarginBottom = 0;
+            this.bunifuTextBox1.TextMarginLeft = 3;
+            this.bunifuTextBox1.TextMarginTop = 1;
+            this.bunifuTextBox1.TextPlaceholder = "Enter text";
+            this.bunifuTextBox1.UseSystemPasswordChar = false;
+            this.bunifuTextBox1.WordWrap = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Gray;
+            this.label20.Location = new System.Drawing.Point(14, 48);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(252, 24);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "Thông tin tài khoản học sinh:";
+            // 
+            // dataGridView_taikhoan_p8
+            // 
+            this.dataGridView_taikhoan_p8.AllowUserToAddRows = false;
+            this.dataGridView_taikhoan_p8.AllowUserToDeleteRows = false;
+            this.dataGridView_taikhoan_p8.AllowUserToOrderColumns = true;
+            this.dataGridView_taikhoan_p8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_taikhoan_p8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column10,
+            this.Column13,
+            this.Column14,
+            this.Column11,
+            this.Column12});
+            this.dataGridView_taikhoan_p8.Location = new System.Drawing.Point(18, 87);
+            this.dataGridView_taikhoan_p8.Name = "dataGridView_taikhoan_p8";
+            this.dataGridView_taikhoan_p8.Size = new System.Drawing.Size(609, 501);
+            this.dataGridView_taikhoan_p8.TabIndex = 0;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Mã HS";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 70;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Họ tên học sinh";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 150;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Niên khóa";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Width = 80;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Lớp";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Width = 60;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Tên tài khoản";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Mật khẩu";
+            this.Column12.Name = "Column12";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Số TT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mã HS";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tên học sinh";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 140;
+            // 
+            // trbhk1
+            // 
+            this.trbhk1.HeaderText = "TrbHK1";
+            this.trbhk1.Name = "trbhk1";
+            this.trbhk1.ReadOnly = true;
+            this.trbhk1.Width = 60;
+            // 
+            // hanhkiemhk1
+            // 
+            this.hanhkiemhk1.HeaderText = "Hạnh kiểm HK1";
+            this.hanhkiemhk1.Items.AddRange(new object[] {
+            "Tốt",
+            "Khá",
+            "Trung bình",
+            "Yếu"});
+            this.hanhkiemhk1.Name = "hanhkiemhk1";
+            this.hanhkiemhk1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hanhkiemhk1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // hocluchk1
+            // 
+            this.hocluchk1.HeaderText = "Học lực HK1";
+            this.hocluchk1.Name = "hocluchk1";
+            this.hocluchk1.ReadOnly = true;
+            this.hocluchk1.Width = 80;
+            // 
+            // trbhk2
+            // 
+            this.trbhk2.HeaderText = "TrbHK2";
+            this.trbhk2.Name = "trbhk2";
+            this.trbhk2.ReadOnly = true;
+            this.trbhk2.Width = 60;
+            // 
+            // hanhkiemhk2
+            // 
+            this.hanhkiemhk2.HeaderText = "Hạnh kiểm HK2";
+            this.hanhkiemhk2.Items.AddRange(new object[] {
+            "Tốt",
+            "Khá",
+            "Trung bình",
+            "Yếu"});
+            this.hanhkiemhk2.Name = "hanhkiemhk2";
+            this.hanhkiemhk2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hanhkiemhk2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // hocluchk2
+            // 
+            this.hocluchk2.HeaderText = "Học Lực HK2";
+            this.hocluchk2.Name = "hocluchk2";
+            this.hocluchk2.ReadOnly = true;
+            this.hocluchk2.Width = 80;
+            // 
+            // trbCN
+            // 
+            this.trbCN.HeaderText = "TrbCN";
+            this.trbCN.Name = "trbCN";
+            this.trbCN.ReadOnly = true;
+            this.trbCN.Width = 60;
+            // 
+            // hanhkiemCN
+            // 
+            this.hanhkiemCN.HeaderText = "Hạnh kiểm CN";
+            this.hanhkiemCN.Name = "hanhkiemCN";
+            this.hanhkiemCN.ReadOnly = true;
+            // 
+            // hoclucCn
+            // 
+            this.hoclucCn.HeaderText = "Học lực CN";
+            this.hoclucCn.Name = "hoclucCn";
+            this.hoclucCn.ReadOnly = true;
+            this.hoclucCn.Width = 80;
             // 
             // frmMain
             // 
@@ -3653,6 +3896,10 @@ namespace StudentManagementSystem
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_NgaySinh_p6.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_NgaySinh_p6.Properties)).EndInit();
+            this.tab_caidat_tab8.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_taikhoan_p8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3741,23 +3988,11 @@ namespace StudentManagementSystem
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private MaterialSkin.Controls.MaterialRaisedButton btn_tinhtongket_p3;
         private System.Windows.Forms.Label lb_siso_p3;
         private System.Windows.Forms.Label lb_tenlop_p3;
         private System.Windows.Forms.Label lb_tengvcn_p3;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trbhk1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn hanhkiemhk1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hocluchk1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trbhk2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn hanhkiemhk2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hocluchk2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trbCN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hanhkiemCN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoclucCn;
         private System.Windows.Forms.TabPage tabchuyenlop;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label10;
@@ -3850,7 +4085,7 @@ namespace StudentManagementSystem
         private MaterialSkin.Controls.MaterialFlatButton btn_CaiDat;
         private System.Windows.Forms.TabPage Tabthemhs;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tab_caidat_tab8;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.DataGridView dataGridView_HSThem_p6;
         private System.Windows.Forms.Panel panel14;
@@ -3894,5 +4129,31 @@ namespace StudentManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private Bunifu.UI.WinForms.BunifuCheckBox Check_sdt;
+        private System.Windows.Forms.Panel panel16;
+        private MaterialSkin.Controls.MaterialRaisedButton btn_Hienthi_p8;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
+        private System.Windows.Forms.Label label21;
+        private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView dataGridView_taikhoan_p8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trbhk1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn hanhkiemhk1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hocluchk1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trbhk2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn hanhkiemhk2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hocluchk2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trbCN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hanhkiemCN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoclucCn;
     }
 }
