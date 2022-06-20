@@ -781,7 +781,6 @@ namespace StudentManagementSystem
             // 
             this.dataGridView_Diem.AllowUserToAddRows = false;
             this.dataGridView_Diem.AllowUserToDeleteRows = false;
-            this.dataGridView_Diem.AllowUserToOrderColumns = true;
             this.dataGridView_Diem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Diem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,

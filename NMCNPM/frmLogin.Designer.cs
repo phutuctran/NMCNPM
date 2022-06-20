@@ -33,7 +33,6 @@ namespace StudentManagementSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,7 +56,6 @@ namespace StudentManagementSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -66,17 +64,6 @@ namespace StudentManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(269, 450);
             this.panel1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F);
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(35, 417);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 23);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Made by: 3 người =))";
             // 
             // label2
             // 
@@ -165,7 +152,7 @@ namespace StudentManagementSystem
             this.TB_password.ForeColor = System.Drawing.Color.Gray;
             this.TB_password.Icon = ((System.Drawing.Image)(resources.GetObject("TB_password.Icon")));
             this.TB_password.Location = new System.Drawing.Point(4, 104);
-            this.TB_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_password.Margin = new System.Windows.Forms.Padding(4);
             this.TB_password.Name = "TB_password";
             this.TB_password.Size = new System.Drawing.Size(250, 45);
             this.TB_password.TabIndex = 6;
@@ -180,7 +167,7 @@ namespace StudentManagementSystem
             this.TB_username.ForeColor = System.Drawing.Color.Gray;
             this.TB_username.Icon = ((System.Drawing.Image)(resources.GetObject("TB_username.Icon")));
             this.TB_username.Location = new System.Drawing.Point(4, 24);
-            this.TB_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TB_username.Margin = new System.Windows.Forms.Padding(4);
             this.TB_username.Name = "TB_username";
             this.TB_username.Size = new System.Drawing.Size(250, 45);
             this.TB_username.TabIndex = 5;
@@ -293,7 +280,6 @@ namespace StudentManagementSystem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox BT_Exit;
         private Bunifu.Framework.UI.BunifuTextbox TB_username;
         private BunifuTextbox TB_password;

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using StudentManagementSystem.Classes;
 using StudentManagementSystem.DatabaseCore;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace StudentManagementSystem
 {
@@ -39,6 +40,9 @@ namespace StudentManagementSystem
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            mtCu_p8._TextBox.PasswordChar = '\u25CF';
+            mkmoi_p8._TextBox.PasswordChar = '\u25CF';
+            mtk_p8._TextBox.PasswordChar = '\u25CF';
             tabMain.Appearance = TabAppearance.FlatButtons;
             tabMain.ItemSize = new Size(0, 1);
             tabMain.SizeMode = TabSizeMode.Fixed;
@@ -47,6 +51,13 @@ namespace StudentManagementSystem
             GetandShowMaNamHocpage3();
             GetandShowMaNamHocpage4();
             LoadPage5();
+
+            string check = File.ReadAllText("./StudentEdit");
+            if (check == "1")
+                bunifuCheckBox1.Checked = true;
+            else
+                bunifuCheckBox1.Checked = false;
+
         }
 
         //Event menu
@@ -376,28 +387,32 @@ namespace StudentManagementSystem
                 string _namHoc = CB_NamHoc.SelectedItem.ToString();
                 listHocSinh_page1[i].DTP = new DiemThanhPhan(_maMon, _tenMH);
                 string maDiemMon = "";
-                query = $"SELECT MADIEMMON FROM DIEMMON AS DM WHERE DM.MAHOCSINH = '{_maHS}' AND DM.MAHK = '{_maHK}' AND DM.NAMHOC = '{_namHoc}' AND DM.MAMONHOC = '{_maMon}'";
+                query = $"SELECT DM.MADIEMMON, DM.MAMONHOC, DM.TRUNGBINH FROM DIEMMON AS DM WHERE DM.MAHOCSINH = '{_maHS}' AND DM.MAHK = '{_maHK}' AND DM.NAMHOC = '{_namHoc}' AND DM.MAMONHOC = '{_maMon}'";
                 cmd = new SqlCommand(query, GlobalProperties.conn);
-
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
                     if (rdr.HasRows)
                     {
                         while (rdr.Read())
                         {
-                            maDiemMon = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0);
-                            listHocSinh_page1[i].DTP.MaDiemMon = maDiemMon;
+                            string maDM = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                            string maMH = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
+                            double diemtp = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
+                            listHocSinh_page1[i].DTP.MaDiemMon = maDM;
+                            maDiemMon = maDM;
+                            listHocSinh_page1[i].DTP.MaMH = maMH;
+                            listHocSinh_page1[i].DTP.DDGTRB = new DTP(diemtp, maDM);
+                            listHocSinh_page1[i].DTP.HaveTableDiemMon = true;
+                            break;
                         }
                     }
                 }
 
-                query = @"SELECT CTD.DIEM, LKT.TENLOAIKT, DM.TRUNGBINH
-                            FROM CHITIETDIEM AS CTD
-                            INNER JOIN DIEMMON AS DM ON CTD.MADIEMMON = DM.MADIEMMON 
-                            LEFT JOIN LOAIKIEMTRA AS LKT ON LKT.MALOAIKT = CTD.MALOAIKT
-                            LEFT JOIN HOCSINH AS HS ON HS.MAHS = DM.MAHOCSINH
-                            LEFT JOIN MONHOC AS MN ON MN.MAMH = DM.MAMONHOC " +
-                $"WHERE DM.MAHOCSINH = '{_maHS}' AND DM.MAHK = '{_maHK}' AND DM.NAMHOC = '{_namHoc}' AND DM.MAMONHOC = '{_maMon}'";
+
+
+                query = @"SELECT CTD.DIEM, CTD.MALOAIKT
+                            FROM CHITIETDIEM AS CTD" +
+                $" WHERE CTD.MADIEMMON = '{listHocSinh_page1[i].DTP.MaDiemMon}'";
 
 
                 cmd = new SqlCommand(query, GlobalProperties.conn);
@@ -408,41 +423,43 @@ namespace StudentManagementSystem
                     {
                         while (rdr.Read())
                         {
+                            //string maMH = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                            //tenMH = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
+                            //maDiemMon = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
                             string loaiKT = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
                             double diemtp = rdr.IsDBNull(0) ? -1 : rdr.GetDouble(0);
-                            double diemTB = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
+                            loaiKT = loaiKT.Trim();
+                            //string loaiKT = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1);
+                            //double diemtp = rdr.IsDBNull(0) ? -1 : rdr.GetDouble(0);
+                            //double diemTB = rdr.IsDBNull(2) ? -1 : rdr.GetDouble(2);
                             // MessageBox.Show(_tenMH + " " + maDiemMon + " " + loaiKT + " " + diemtp + " " + diemTB);
                             if (diemtp != -1)
                             {
                                 listHocSinh_page1[i].DTP.MaMH = _maMon;
-                                listHocSinh_page1[i].DTP.HaveTableDiemMon = true;
-
-                                if (loaiKT == "DDGTX1")
+                                if (loaiKT == "DTX1")
                                 {
                                     listHocSinh_page1[i].DTP.DDGTX1 = new DTP(diemtp, maDiemMon);
                                 }
-                                else if (loaiKT == "DDGTX2")
+                                else if (loaiKT == "DTX2")
                                 {
                                     listHocSinh_page1[i].DTP.DDGTX2 = new DTP(diemtp, maDiemMon);
                                 }
-                                else if (loaiKT == "DDGTX3")
+                                else if (loaiKT == "DTX3")
                                 {
                                     listHocSinh_page1[i].DTP.DDGTX3 = new DTP(diemtp, maDiemMon);
                                 }
-                                else if (loaiKT == "DDGTX4")
+                                else if (loaiKT == "DTX4")
                                 {
                                     listHocSinh_page1[i].DTP.DDGTX4 = new DTP(diemtp, maDiemMon);
                                 }
-                                else if (loaiKT == "DDGGK")
+                                else if (loaiKT == "DGK")
                                 {
                                     listHocSinh_page1[i].DTP.DDGGK = new DTP(diemtp, maDiemMon);
                                 }
-                                else if (loaiKT == "DDGCK")
+                                else if (loaiKT == "DCK")
                                 {
                                     listHocSinh_page1[i].DTP.DDGCK = new DTP(diemtp, maDiemMon);
                                 }
-
-                                listHocSinh_page1[i].DTP.DDGTRB = new DTP(diemTB, maDiemMon);
 
                             }
                         }
@@ -1345,7 +1362,7 @@ namespace StudentManagementSystem
                             listHS_page3[i].hanhKiemCN = hkcn;
                             listHS_page3[i].maHKiem = maHk;
                             DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dataGridView_Tongket.Rows[i].Cells[4];
-                            
+
                             //dataGridView_Tongket.Rows[i].Cells[4].Value = GetLoaiHanhKiem(hk1);
                             //dataGridView_Tongket.Rows[i].Cells[7].Value = GetLoaiHanhKiem(hk2);
                             //dataGridView_Tongket.Rows[i].Cells[10].Value = GetLoaiHanhKiem(hkcn);
@@ -1377,7 +1394,7 @@ namespace StudentManagementSystem
             str = str + "\n" + listHS_page3[0].hanhKiem1 + "\n" + listHS_page3[0].hanhKiem2 + "\n" + listHS_page3[0].maHKiem;
             MessageBox.Show(str);*/
 
-        } 
+        }
 
         int GetLoaiHanhKiem(string hk)// 0: Tôt, 1: Khá, 2: Trung bình, 3: yếu
         {
@@ -1493,11 +1510,11 @@ namespace StudentManagementSystem
                 if (dataGridView_Tongket.Rows[i].Cells[4].Value == null)
                 {
                     _hk = "";
-                }    
+                }
                 else
                 {
-                   _hk = dataGridView_Tongket.Rows[i].Cells[4].Value.ToString();
-                }    
+                    _hk = dataGridView_Tongket.Rows[i].Cells[4].Value.ToString();
+                }
                 int hanhkiem1 = GetLoaiHanhKiem(_hk);
                 bool tinh = true;
                 List<double> diem1 = new List<double>();
@@ -1569,9 +1586,9 @@ namespace StudentManagementSystem
             }
         }
 
-            //------------------page4-------------------
+        //------------------page4-------------------
 
-            List<Lop> listLopCu_page4 = new List<Lop>();
+        List<Lop> listLopCu_page4 = new List<Lop>();
         List<Lop> listLopMoi_page4 = new List<Lop>();
         Dictionary<string, int> listNamHoc_page4 = new Dictionary<string, int>();
         Dictionary<int, int> listChuyen = new Dictionary<int, int>();//key = stt page mới, value = stt page cũ
@@ -2340,7 +2357,7 @@ namespace StudentManagementSystem
                     {
                         listTaiKhoan.Add(new TaiKhoan());
                         var idx = dataGridView_taikhoan_p8.Rows.Add();
-                        dataGridView_taikhoan_p8.Rows[idx].Cells[0].Value =  rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
+                        dataGridView_taikhoan_p8.Rows[idx].Cells[0].Value = rdr.IsDBNull(0) ? GlobalProperties.NULLFIELD : rdr.GetString(0).Trim();
                         dataGridView_taikhoan_p8.Rows[idx].Cells[1].Value = rdr.IsDBNull(1) ? GlobalProperties.NULLFIELD : rdr.GetString(1).Trim();
                         dataGridView_taikhoan_p8.Rows[idx].Cells[2].Value = rdr.IsDBNull(2) ? GlobalProperties.NULLFIELD : rdr.GetString(2).Trim();
                         dataGridView_taikhoan_p8.Rows[idx].Cells[3].Value = rdr.IsDBNull(3) ? GlobalProperties.NULLFIELD : rdr.GetString(3).Trim();
@@ -2384,8 +2401,91 @@ namespace StudentManagementSystem
             MessageBox.Show("Tính năng đang phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btn_thaymtAdmin_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(mtCu_p8.text))
+            {
+                MessageBox.Show("Nhập mật khẩu cũ!");
+                return;
+            }
+            if (string.IsNullOrEmpty(mkmoi_p8.text))
+            {
+                MessageBox.Show("Nhập mật khẩu mới!");
+                return;
+            }
+            if (mtk_p8.text.Trim() != mkmoi_p8.text.Trim())
+            {
+                MessageBox.Show("Xác nhận mật khẩu mới không trùng khớp");
+                return;
+            }
+            bool check = false;
+            string query = $"SELECT PASS FROM TAIKHOAN WHERE USERNAME = 'admin'";
+            SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.HasRows)
+                {
+                    rdr.Read();
+                    string pass = rdr.GetString(0);
+                    if (pass.Trim() != mtCu_p8.text.Trim())
+                    {
+                        MessageBox.Show("Mật khẩu cũ không đúng!");
+                        return;
+                    }
+                    MessageBox.Show("ok");
+                    check = true;
+                }
+            }
+            if (check)
+            {
+                query = $"UPDATE TAIKHOAN SET PASS = '{mkmoi_p8.text.Trim()}' WHERE USERNAME = 'admin'";
+                cmd = new SqlCommand(query, GlobalProperties.conn);
+                int row = cmd.ExecuteNonQuery();
+                if (row > 0)
+                {
+                    MessageBox.Show("Đã lưu");
+                    return;
+                }
 
+            }
+        }
 
+        private void bunifuCheckBox1_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (bunifuCheckBox1.Checked == true)
+            {
+                File.WriteAllText("./StudentEdit", "1");
+            }
+            else
+            {
+                File.WriteAllText("./StudentEdit", "0");
+            }
+        }
+
+        private void bunifuTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            string text = bunifuTextBox1.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                for (int i = 0; i < dataGridView_taikhoan_p8.RowCount; i++)
+                {
+                    dataGridView_taikhoan_p8.Rows[i].Visible = true;
+                }
+            }
+            for (int i = 0; i < dataGridView_taikhoan_p8.RowCount; i++)
+            {
+                string mahs = dataGridView_taikhoan_p8.Rows[i].Cells[0].Value.ToString();
+                string tenhs = dataGridView_taikhoan_p8.Rows[i].Cells[1].Value.ToString();
+                if (!mahs.Contains(text) && !tenhs.Contains(text))
+                {
+                    dataGridView_taikhoan_p8.Rows[i].Visible = false;
+                }
+                else
+                {
+                    dataGridView_taikhoan_p8.Rows[i].Visible = true;
+                }
+            }
+        }
 
         //----------Dùng chung các tab-------------
         string GetKeyTable(string query)
@@ -2721,6 +2821,7 @@ namespace StudentManagementSystem
             //Listdiem.count = 13
             //diem[11]: diem the duc
             //listTenMH = { "0-Toán học", "1-Ngữ văn", "Vật lí", "Hóa học", "Sinh học", "Tin học", "Lịch sử", "Địa lí", "8-Ngoại ngữ", "GDCD", "Công nghệ", "Thể dục", "GDQP" };
+            hs.diemTrungBinh = Math.Round(hs.diemTrungBinh, 2);
             return hs;
         }
 
@@ -2919,6 +3020,7 @@ namespace StudentManagementSystem
             //Listdiem.count = 13
             //diem[11]: diem the duc
             //listTenMH = { "Toán học", "Ngữ văn", "Vật lí", "Hóa học", "Sinh học", "Tin học", "Lịch sử", "Địa lí", "Ngoại ngữ", "GDCD", "Công nghệ", "Thể dục", "GDQP" };
+            hs.diemTrungBinh = Math.Round(hs.diemTrungBinh, 2);
             return hs;
         }
     }

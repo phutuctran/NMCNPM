@@ -141,15 +141,30 @@ namespace StudentManagementSystem
                                 maHS = rdr.GetString(0);
                             }
                         }
+
+                        string check = "";
                         //MessageBox.Show(maHS);
                         if (!string.IsNullOrEmpty(maHS))
                         {/////////////////////////////////////////
+                            check = File.ReadAllText("./StudentEdit");
+
+                            /////////////////////////////////////////
+                        }
+                        if (check == "1")
+                        {
+                            using (Form frm = new StudentInfoEdit(maHS, false))
+                            {
+                                frm.ShowDialog();
+                                GC.Collect();
+                            }
+                        }
+                        else
+                        {
                             using (Form frm = new StudentInfo(maHS))
                             {
                                 frm.ShowDialog();
                                 GC.Collect();
                             }
-                         /////////////////////////////////////////
                         }
                     }
                     else
@@ -225,6 +240,11 @@ namespace StudentManagementSystem
             {
                 TB_password.text = null;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

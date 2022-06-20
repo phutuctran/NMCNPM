@@ -35,7 +35,7 @@ namespace StudentManagementSystem
         string namHoc = "";
         string hocKi = "";
         double diemTrBHK;
-        public StudentInfoEdit(string _MaHS) //_MaHS phải luôn tồn tại
+        public StudentInfoEdit(string _MaHS, bool EditDiem = true) //_MaHS phải luôn tồn tại
         {
             InitializeComponent();
             circularPictureBox1.Image = Resources.UIT_Logo_NonBackground;
@@ -45,6 +45,12 @@ namespace StudentManagementSystem
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             GetDataStudent();
             ShowData();
+            if (EditDiem == false)
+            {
+                btn_hoantacpag2.Visible = false;
+                btn_TinhDTB.Visible = false;
+                btn_Savepage2.Visible = false;
+            }
             //datepicker_hs.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             //datepicker_hs.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             //datepicker_hs.Properties.EditFormat.FormatString = "dd/MM/yyyy";
