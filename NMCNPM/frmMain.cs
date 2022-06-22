@@ -1231,6 +1231,7 @@ namespace StudentManagementSystem
             }
             cur_lop_page3 = CB_Lop_page3.SelectedIndex;
             GetDataHS();
+            btn_tinhtongket_p3.PerformClick();
 
         }
 
@@ -1286,6 +1287,7 @@ namespace StudentManagementSystem
             SqlCommand cmd = new SqlCommand(query, GlobalProperties.conn);
             int stt = 0;
             dataGridView_Tongket.Rows.Clear();
+            listHS_page3 = new List<DiemtrbHS>();
             using (SqlDataReader rdr = cmd.ExecuteReader())
             {
                 if (rdr.HasRows)
@@ -1299,6 +1301,7 @@ namespace StudentManagementSystem
                         dataGridView_Tongket.Rows[index].Cells[0].Value = (++stt).ToString();//Số thứ tự
                         dataGridView_Tongket.Rows[index].Cells[1].Value = maHs;
                         dataGridView_Tongket.Rows[index].Cells[2].Value = hoTen;
+                        
                     }
                 }
             }
@@ -1361,7 +1364,17 @@ namespace StudentManagementSystem
                             listHS_page3[i].hanhKiem2 = hk2;
                             listHS_page3[i].hanhKiemCN = hkcn;
                             listHS_page3[i].maHKiem = maHk;
-                            DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dataGridView_Tongket.Rows[i].Cells[4];
+                            if (GetLoaiHanhKiem(hk1) != -1)
+                            {
+                                (dataGridView_Tongket.Rows[i].Cells[4] as DataGridViewComboBoxCell).Value = (dataGridView_Tongket.Rows[i].Cells[4] as DataGridViewComboBoxCell).Items[GetLoaiHanhKiem(hk1)];
+                            }
+                            if (GetLoaiHanhKiem(hk2) != -1)
+                            {
+                                (dataGridView_Tongket.Rows[i].Cells[7] as DataGridViewComboBoxCell).Value = (dataGridView_Tongket.Rows[i].Cells[7] as DataGridViewComboBoxCell).Items[GetLoaiHanhKiem(hk2)];
+
+                            }
+                            dataGridView_Tongket.Rows[i].Cells[10].Value = hkcn;
+                            //DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dataGridView_Tongket.Rows[i].Cells[4];
 
                             //dataGridView_Tongket.Rows[i].Cells[4].Value = GetLoaiHanhKiem(hk1);
                             //dataGridView_Tongket.Rows[i].Cells[7].Value = GetLoaiHanhKiem(hk2);
@@ -1394,6 +1407,72 @@ namespace StudentManagementSystem
             str = str + "\n" + listHS_page3[0].hanhKiem1 + "\n" + listHS_page3[0].hanhKiem2 + "\n" + listHS_page3[0].maHKiem;
             MessageBox.Show(str);*/
 
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e) ///Lưu thông tin học sinh
+        {
+            string query;
+            SqlCommand cmd;
+            for (int i = 0; i < listHS_page3.Count; i++)
+            {
+                string _mahs = listHS_page3[i].maHS;
+                string xl1 = dataGridView_Tongket.Rows[i].Cells[4].Value == null ? GlobalProperties.NULLFIELD : dataGridView_Tongket.Rows[i].Cells[4].Value.ToString();
+                string xl2 = dataGridView_Tongket.Rows[i].Cells[7].Value == null ? GlobalProperties.NULLFIELD : dataGridView_Tongket.Rows[i].Cells[7].Value.ToString();
+                string xlcn = dataGridView_Tongket.Rows[i].Cells[10].Value== null ? GlobalProperties.NULLFIELD : dataGridView_Tongket.Rows[i].Cells[10].Value.ToString();
+                if (!string.IsNullOrEmpty(listHS_page3[i].maHKiem))
+                {
+
+                    //Đã có hạnh kiểm:
+                    query = $"UPDATE HANHKIEM SET XEPLOAIHKI = N'{xl1}', XEPLOAIHKII = N'{xl2}', XEPLOAICN = N'{xlcn}' WHERE MAHS = '{_mahs}'";
+                    try
+                    {
+                        cmd = new SqlCommand(query, GlobalProperties.conn);
+                        int rowCount = cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ee)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            MessageBox.Show("Error: " + ee);
+                        }
+                        return;
+                    }
+                }
+                else
+                {
+                    //Chưa có bảng hạnh kiểm
+                    query = "SELECT COUNT(*) FROM HANHKIEM WHERE MAHK = ";
+                    string maHKiem = GetKeyTable(query);
+
+                    try
+                    {
+                        // Câu lệnh Insert.
+                        query = $"INSERT INTO HANHKIEM(MAHK, MAHS, XEPLOAIHKI, XEPLOAIHKII, XEPLOAICN, NAMHOC) VALUES('{maHKiem}', '{_mahs}', N'{xl1}', N'{xl2}', N'{xlcn}', '{CB_NamHoc_page3.SelectedItem.ToString()}')";
+
+                        cmd = new SqlCommand(query, GlobalProperties.conn);
+
+                        int rowCount = cmd.ExecuteNonQuery();
+                        if (rowCount > 0)
+                        {
+                            listHS_page3[i].maHKiem = maHKiem;
+                        }
+                    }
+                    catch (Exception ee)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Lỗi trong quá trình thêm. Hiển thị lỗi?", "Thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            MessageBox.Show("Error: " + ee);
+                        }
+                    }
+
+                }
+                listHS_page3[i].hanhKiem1 = xl1;
+                listHS_page3[i].hanhKiem2 = xl2;
+                listHS_page3[i].hanhKiemCN = xlcn;
+            }
+            MessageBox.Show("Đã lưu!", "Thông báo");
         }
 
         int GetLoaiHanhKiem(string hk)// 0: Tôt, 1: Khá, 2: Trung bình, 3: yếu
@@ -1502,7 +1581,7 @@ namespace StudentManagementSystem
 
         private void btn_tinhtongket_p3_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < listHS_page3.Count; i++)
+            for (int i = 0; i < dataGridView_Tongket.RowCount; i++)
             {
                 string _hk;
                 bool tkhk1 = false;
@@ -2327,13 +2406,13 @@ namespace StudentManagementSystem
         {
             if (!Regex.IsMatch(TB_SDT_p6.Text, @"^\d+$"))
             {
-                Checkbox_Mahs.Checked = false;
+                Check_sdt.Checked = false;
             }
             else
             {
                 if (TB_SDT_p6.Text.Length == 10)
                 {
-                    Checkbox_Mahs.Checked = true;
+                    Check_sdt.Checked = true;
                 }
             }
         }
@@ -2391,10 +2470,6 @@ namespace StudentManagementSystem
             MessageBox.Show("Đã lưu");
         }
 
-        private void materialRaisedButton3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Tính năng đang phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
